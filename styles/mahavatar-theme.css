@@ -1,0 +1,293 @@
+/* Mahavatar Narsimha Theme - 4 Hour Version */
+/* Inspired by Hindu mythology and epic animation aesthetics */
+
+:root {
+  /* Primary Colors - Divine Gold & Sacred Red */
+  --primary-gold: #D4AF37;
+  --primary-gold-light: #F4E5BC;
+  --primary-gold-dark: #B8941F;
+  
+  --primary-red: #C41E3A;
+  --primary-red-light: #E85D75;
+  --primary-red-dark: #8B0020;
+  
+  /* Secondary Colors - Cosmic Blue & Divine Purple */
+  --secondary-blue: #1E3A5F;
+  --secondary-blue-light: #4A6FA5;
+  --secondary-blue-dark: #0F1F3D;
+  
+  --secondary-purple: #6B46C1;
+  --secondary-purple-light: #9061F9;
+  --secondary-purple-dark: #4C1D95;
+  
+  /* Neutral Colors */
+  --neutral-white: #FFFFFF;
+  --neutral-cream: #FFF8E7;
+  --neutral-gray-light: #F3F4F6;
+  --neutral-gray: #6B7280;
+  --neutral-gray-dark: #374151;
+  --neutral-black: #111827;
+  
+  /* Gradient Backgrounds */
+  --gradient-divine: linear-gradient(135deg, var(--primary-gold) 0%, var(--primary-red) 100%);
+  --gradient-cosmic: linear-gradient(135deg, var(--secondary-blue) 0%, var(--secondary-purple) 100%);
+  --gradient-hero: linear-gradient(180deg, rgba(30,58,95,0.95) 0%, rgba(196,30,58,0.85) 100%);
+  
+  /* Typography */
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-accent: 'Noto Sans Devanagari', sans-serif;
+  
+  /* Font Sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.125rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  --shadow-divine: 0 0 30px rgba(212, 175, 55, 0.4);
+  
+  /* Animations */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+  --neutral-white: #111827;
+  --neutral-cream: #1F2937;
+  --neutral-gray-light: #374151;
+  --neutral-gray: #9CA3AF;
+  --neutral-gray-dark: #D1D5DB;
+  --neutral-black: #F9FAFB;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--neutral-black);
+  background-color: var(--neutral-white);
+  line-height: 1.6;
+}
+
+/* Typography Classes */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.font-accent {
+  font-family: var(--font-accent);
+}
+
+.text-gradient-divine {
+  background: var(--gradient-divine);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-cosmic {
+  background: var(--gradient-cosmic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero Section Specific */
+.hero-overlay {
+  background: var(--gradient-hero);
+  backdrop-filter: blur(2px);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-6xl));
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: var(--primary-gold);
+}
+
+.hero-subtitle {
+  font-size: clamp(var(--text-lg), 2.5vw, var(--text-2xl));
+  color: var(--neutral-cream);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Button Styles */
+.btn-primary {
+  background: var(--gradient-divine);
+  color: var(--neutral-white);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all var(--transition-base);
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl), var(--shadow-divine);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary-gold);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  border: 2px solid var(--primary-gold);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: var(--primary-gold);
+  color: var(--neutral-black);
+}
+
+/* Card Styles */
+.card-divine {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(196, 30, 58, 0.1) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-base);
+}
+
+.card-divine:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl), 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+/* Animation Classes */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-in-up 0.6s ease-out;
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+  :root {
+    --text-base: 0.875rem;
+    --space-4: 0.875rem;
+    --space-6: 1.25rem;
+    --space-8: 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: var(--text-3xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--text-lg);
+  }
+}
+
+/* Loading States */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--neutral-gray-light) 25%,
+    rgba(212, 175, 55, 0.1) 50%,
+    var(--neutral-gray-light) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-10px); }
+  60% { transform: translateX(-50%) translateY(-5px); }
+}

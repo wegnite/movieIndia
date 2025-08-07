@@ -3,5 +3,65 @@
     "app/api/**/*": {
       "maxDuration": 60
     }
-  }
+  },
+  "buildCommand": "pnpm build",
+  "devCommand": "pnpm dev",
+  "installCommand": "pnpm install",
+  "framework": "nextjs",
+  "regions": ["sin1", "bom1"],
+  "env": {
+    "NEXT_PUBLIC_SITE_URL": "https://mahavatar-narsimha.com",
+    "NEXT_PUBLIC_GA_ID": "G-XXXXXXXXXX"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/mahavatar-narsimha-release-date",
+      "destination": "/#release-date",
+      "permanent": true
+    },
+    {
+      "source": "/mahavatar-narsimha-cast",
+      "destination": "/#cast",
+      "permanent": true
+    },
+    {
+      "source": "/mahavatar-narsimha-ott",
+      "destination": "/#watch-online",
+      "permanent": true
+    },
+    {
+      "source": "/mahavatar-narsimha-bookmyshow",
+      "destination": "/#watch-online",
+      "permanent": true
+    },
+    {
+      "source": "/mahavatar-narsimha-reviews",
+      "destination": "/#reviews",
+      "permanent": true
+    },
+    {
+      "source": "/mahavatar-narsimha-videos",
+      "destination": "/#videos",
+      "permanent": true
+    }
+  ]
 }
