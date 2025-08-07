@@ -8,7 +8,6 @@
   "devCommand": "pnpm dev",
   "installCommand": "pnpm install",
   "framework": "nextjs",
-  "regions": ["sin1", "bom1"],
   "env": {
     "NEXT_PUBLIC_SITE_URL": "https://mahavatar-narsimha.com",
     "NEXT_PUBLIC_GA_ID": "G-XXXXXXXXXX"
