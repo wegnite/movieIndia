@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 
 interface Platform {
   name: string
-  type: 'theater' | 'ott'
+  type: string
   url: string
   available: boolean
   price?: string
