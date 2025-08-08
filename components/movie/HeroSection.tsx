@@ -163,6 +163,12 @@ export default function HeroSection() {
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-bold px-8 py-6 text-lg shadow-lg hover:shadow-amber-500/25 transition-all duration-300"
+              onClick={() => {
+                const videosSection = document.getElementById('videos');
+                if (videosSection) {
+                  videosSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
             >
               <Play className="w-6 h-6 mr-2" />
               Watch Trailer

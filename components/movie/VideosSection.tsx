@@ -56,7 +56,7 @@ export default function VideosSection({ videos }: Props) {
   return (
     <>
       <div className="relative">
-        {/* Section Header */}
+        {/* Enhanced Section Header with Pulsing Animation */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,14 +64,40 @@ export default function VideosSection({ videos }: Props) {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
-              Videos & Trailers
+          <motion.div
+            animate={{ scale: [1, 1.02, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="inline-block"
+          >
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent">
+                🎬 Watch Trailers & Videos
+              </span>
+            </h2>
+          </motion.div>
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <motion.div
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="w-2 h-2 bg-red-500 rounded-full"
+            />
+            <p className="text-white text-lg max-w-2xl mx-auto font-medium">
+              Click to watch exclusive trailers, teasers, and behind-the-scenes content
+            </p>
+            <motion.div
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
+              className="w-2 h-2 bg-orange-500 rounded-full"
+            />
+          </div>
+          <div className="flex justify-center gap-4">
+            <span className="bg-red-600/20 border border-red-500/50 text-red-300 px-4 py-1 rounded-full text-sm font-semibold">
+              🔥 HOT: New Trailer Released
             </span>
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Experience the epic journey through official trailers, teasers, and exclusive behind-the-scenes footage
-          </p>
+            <span className="bg-yellow-600/20 border border-yellow-500/50 text-yellow-300 px-4 py-1 rounded-full text-sm font-semibold">
+              ⭐ Must Watch
+            </span>
+          </div>
         </motion.div>
 
         {/* Featured Video - First video as main feature */}
@@ -84,9 +110,14 @@ export default function VideosSection({ videos }: Props) {
             className="mb-12"
           >
             <div 
-              className="relative rounded-2xl overflow-hidden shadow-2xl group cursor-pointer"
+              className="relative rounded-2xl overflow-hidden shadow-2xl group cursor-pointer transform hover:scale-[1.02] transition-transform duration-300"
               onClick={() => handleVideoClick(videos[0])}
             >
+              <motion.div
+                animate={{ boxShadow: ["0 0 0 0 rgba(239, 68, 68, 0)", "0 0 0 10px rgba(239, 68, 68, 0.3)", "0 0 0 0 rgba(239, 68, 68, 0)"] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="absolute inset-0 rounded-2xl"
+              />
               <div className="aspect-video bg-gradient-to-br from-orange-900 to-red-900">
                 {videos[0].thumbnail ? (
                   <img 
@@ -102,14 +133,27 @@ export default function VideosSection({ videos }: Props) {
                 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:bg-black/40 transition-all duration-300">
-                  {/* Play Button */}
+                  {/* Enhanced Play Button with Pulse */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <motion.div
-                      whileHover={{ scale: 1.1 }}
+                      animate={{ scale: [1, 1.1, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                      className="absolute w-32 h-32 bg-white/20 rounded-full"
+                    />
+                    <motion.div
+                      whileHover={{ scale: 1.15 }}
                       whileTap={{ scale: 0.95 }}
-                      className="bg-white/90 backdrop-blur-sm rounded-full p-6 shadow-2xl group-hover:bg-white transition-colors"
+                      className="relative bg-gradient-to-r from-red-500 to-orange-500 rounded-full p-6 shadow-2xl group-hover:from-red-600 group-hover:to-orange-600 transition-all duration-300"
                     >
-                      <Play className="w-12 h-12 text-red-600 fill-red-600" />
+                      <Play className="w-12 h-12 text-white fill-white" />
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5 }}
+                      className="absolute -bottom-8 bg-gradient-to-r from-red-600 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg"
+                    >
+                      ▶ PLAY NOW
                     </motion.div>
                   </div>
                   
@@ -129,8 +173,17 @@ export default function VideosSection({ videos }: Props) {
                         {videos[0].views}
                       </span>
                     </div>
-                    <h3 className="text-3xl font-bold text-white mb-2">{videos[0].title}</h3>
-                    <p className="text-white/80">Click to watch now</p>
+                    <h3 className="text-3xl font-bold text-white mb-2 drop-shadow-2xl">{videos[0].title}</h3>
+                    <div className="flex items-center gap-2">
+                      <motion.span
+                        animate={{ opacity: [0.6, 1, 0.6] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                        className="text-white font-bold text-lg"
+                      >
+                        ▶
+                      </motion.span>
+                      <p className="text-white font-semibold text-lg">Click to Watch Full Trailer</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -203,7 +256,7 @@ export default function VideosSection({ videos }: Props) {
           ))}
         </div>
 
-        {/* YouTube Channel CTA */}
+        {/* Enhanced YouTube Channel CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -211,11 +264,11 @@ export default function VideosSection({ videos }: Props) {
           viewport={{ once: true }}
           className="mt-12 text-center"
         >
-          <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl p-8 border border-red-200/50">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+          <div className="bg-gradient-to-r from-red-900/50 to-orange-900/50 backdrop-blur-md rounded-2xl p-8 border border-red-500/50">
+            <h3 className="text-2xl font-bold text-white mb-4">
               Watch More on YouTube
             </h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-200 mb-6 max-w-2xl mx-auto">
               Subscribe to our official YouTube channel for more exclusive content, interviews, and updates about Mahavatar Narsimha
             </p>
             <a

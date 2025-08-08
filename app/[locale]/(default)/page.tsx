@@ -81,15 +81,15 @@ export default async function HomePage({
       />
       
       <main className="min-h-screen">
-        {/* Hero Section with main keyword */}
-        <HeroSection />
-        
-        {/* Release Date Countdown - targets "mahavatar narsimha release date" */}
-        <section id="release-date" className="py-20 px-4 bg-gradient-to-b from-white to-amber-50">
+        {/* Videos Section - MOVED TO TOP for immediate visibility */}
+        <section id="videos" className="py-20 px-4 bg-gradient-to-b from-black to-gray-900">
           <div className="max-w-7xl mx-auto">
-            <ReleaseCountdown releaseDate={movieData.releaseDate} />
+            <VideosSection videos={movieData.videos} />
           </div>
         </section>
+        
+        {/* Hero Section with main keyword */}
+        <HeroSection />
 
         {/* Cast Section - targets "mahavatar narsimha cast" */}
         <section id="cast" className="py-20 px-4 bg-gradient-to-b from-amber-50 to-orange-50">
@@ -107,13 +107,6 @@ export default async function HomePage({
               </span>
             </h2>
             <WatchOnlineSection platforms={movieData.platforms} />
-          </div>
-        </section>
-
-        {/* Videos Section - targets "mahavatar narsimha teaser" & "videos" */}
-        <section id="videos" className="py-20 px-4 bg-gradient-to-b from-white to-red-50">
-          <div className="max-w-7xl mx-auto">
-            <VideosSection videos={movieData.videos} />
           </div>
         </section>
 
