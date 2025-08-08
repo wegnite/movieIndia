@@ -80,123 +80,122 @@ export default async function HomePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       
-      <main className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
+      <main className="min-h-screen">
         {/* Hero Section with main keyword */}
         <HeroSection />
         
         {/* Release Date Countdown - targets "mahavatar narsimha release date" */}
-        <section id="release-date" className="py-16 px-4">
+        <section id="release-date" className="py-20 px-4 bg-gradient-to-b from-white to-amber-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-8">
-              Mahavatar Narsimha Release Date
-            </h2>
             <ReleaseCountdown releaseDate={movieData.releaseDate} />
           </div>
         </section>
 
         {/* Cast Section - targets "mahavatar narsimha cast" */}
-        <section id="cast" className="py-16 px-4 bg-gray-50">
+        <section id="cast" className="py-20 px-4 bg-gradient-to-b from-amber-50 to-orange-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-8">
-              Mahavatar Narsimha Cast & Characters
-            </h2>
             <CastSection cast={movieData.cast} />
           </div>
         </section>
 
         {/* Watch Online Section - targets "mahavatar narsimha ott" & "bookmyshow" */}
-        <section id="watch-online" className="py-16 px-4">
+        <section id="watch-online" className="py-20 px-4 bg-gradient-to-b from-orange-50 to-white">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-8">
-              Watch Mahavatar Narsimha Online - OTT & BookMyShow
+            <h2 className="text-4xl font-bold text-center mb-12">
+              <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                Watch Mahavatar Narsimha Online
+              </span>
             </h2>
             <WatchOnlineSection platforms={movieData.platforms} />
           </div>
         </section>
 
         {/* Videos Section - targets "mahavatar narsimha teaser" & "videos" */}
-        <section id="videos" className="py-16 px-4 bg-gray-50">
+        <section id="videos" className="py-20 px-4 bg-gradient-to-b from-white to-red-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-8">
-              Mahavatar Narsimha Videos & Teaser
-            </h2>
             <VideosSection videos={movieData.videos} />
           </div>
         </section>
 
         {/* News Section */}
-        <section id="news" className="py-16 px-4">
+        <section id="news" className="py-20 px-4 bg-gradient-to-b from-red-50 to-purple-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-8">
-              Latest Mahavatar Narsimha News & Updates
+            <h2 className="text-4xl font-bold text-center mb-12">
+              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                Latest News & Updates
+              </span>
             </h2>
             <NewsSection news={movieData.news} />
           </div>
         </section>
 
         {/* Reviews Section - targets "mahavatar narsimha reviews" */}
-        <section id="reviews" className="py-16 px-4 bg-gray-50">
+        <section id="reviews" className="py-20 px-4 bg-gradient-to-b from-purple-50 to-indigo-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-8">
-              Mahavatar Narsimha Reviews & Ratings
+            <h2 className="text-4xl font-bold text-center mb-12">
+              <span className="bg-gradient-to-r from-yellow-600 to-amber-600 bg-clip-text text-transparent">
+                Reviews & Ratings
+              </span>
             </h2>
             <ReviewsSection reviews={movieData.reviews} />
           </div>
         </section>
 
         {/* FAQ Section for SEO */}
-        <section className="py-16 px-4">
+        <section className="py-20 px-4 bg-gradient-to-b from-indigo-50 to-white">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-8">
-              Frequently Asked Questions
+            <h2 className="text-4xl font-bold text-center mb-12">
+              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                Frequently Asked Questions
+              </span>
             </h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-semibold mb-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-xl p-6 shadow-md border border-indigo-100 hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold mb-2 text-gray-800">
                   When is Mahavatar Narsimha release date?
                 </h3>
                 <p className="text-gray-600">
-                  Mahavatar Narsimha is scheduled to release on March 21, 2025, in theaters across India.
+                  Mahavatar Narsimha was theatrically released on July 25, 2025, in 2D and 3D formats across India in 5 languages.
                 </p>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">
+              <div className="bg-white rounded-xl p-6 shadow-md border border-indigo-100 hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold mb-2 text-gray-800">
                   Who is in the Mahavatar Narsimha cast?
                 </h3>
                 <p className="text-gray-600">
-                  The movie features renowned voice actors including the lead hero and supporting cast bringing the epic characters to life.
+                  The movie features voice actors including Ashwin Kumar as Lord Narsimha, along with talented artists voicing Prahlada, Hiranyakashipu, and other characters.
                 </p>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">
+              <div className="bg-white rounded-xl p-6 shadow-md border border-indigo-100 hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold mb-2 text-gray-800">
                   Where can I watch Mahavatar Narsimha online?
                 </h3>
                 <p className="text-gray-600">
-                  After theatrical release, Mahavatar Narsimha will be available on major OTT platforms. Book tickets on BookMyShow.
+                  OTT release is expected on September 25, 2025. Currently showing in theaters - book tickets on BookMyShow.
                 </p>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">
+              <div className="bg-white rounded-xl p-6 shadow-md border border-indigo-100 hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold mb-2 text-gray-800">
                   What is the budget of Mahavatar Narsimha?
                 </h3>
                 <p className="text-gray-600">
-                  Mahavatar Narsimha is made with a budget of approximately ₹100 crores, making it one of India's biggest animated productions.
+                  Made with a budget of ₹100+ crores over 4.5 years, it's one of India's biggest animated productions.
                 </p>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">
-                  Is Mahavatar Narsimha available for download?
+              <div className="bg-white rounded-xl p-6 shadow-md border border-indigo-100 hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                  Is it part of a franchise?
                 </h3>
                 <p className="text-gray-600">
-                  Legal download options will be available after the OTT release on platforms like iTunes, Google Play Movies, and YouTube Movies.
+                  Yes! It's the first film in the Mahavatar Cinematic Universe, with 6 more films planned through 2037.
                 </p>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">
-                  What is the hero name in Mahavatar Narsimha?
+              <div className="bg-white rounded-xl p-6 shadow-md border border-indigo-100 hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                  What is the IMDb rating?
                 </h3>
                 <p className="text-gray-600">
-                  The main character is Lord Narsimha, the fourth avatar of Lord Vishnu, voiced by a renowned Bollywood actor.
+                  Mahavatar Narsimha has an impressive 9.4/10 rating on IMDb, making it one of the highest-rated Indian animated films.
                 </p>
               </div>
             </div>

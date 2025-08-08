@@ -1,0 +1,277 @@
+{
+  "basicInfo": {
+    "title": "Mahavatar Narsimha",
+    "alternativeTitles": {
+      "hindi": "महावतार नरसिंह",
+      "telugu": "మహావతార్ నరసింహ",
+      "tamil": "மகாவதார் நரசிம்மா"
+    },
+    "releaseDate": "2025-04-02",
+    "duration": "125 minutes",
+    "genre": ["Animation", "Mythology", "Epic", "Action", "Drama"],
+    "language": ["Hindi", "Telugu", "Tamil", "English"],
+    "format": ["2D", "3D", "IMAX"],
+    "certification": "U",
+    "productionHouse": "Harihara Animation Studios",
+    "distributors": ["PVR Pictures", "INOX", "Cinepolis"],
+    "budget": "₹50 Crores",
+    "imdbId": "tt28507139",
+    "officialWebsite": "https://mahavatarnarsimha.com",
+    "tagline": "The Legend Awakens",
+    "synopsis": "An epic animated retelling of the Hindu mythological story of Lord Narasimha, the fourth avatar of Vishnu. The film depicts the divine incarnation who manifests to protect his devotee Prahlada and restore cosmic balance by defeating the demon king Hiranyakashipu.",
+    "shortDescription": "Experience the divine fury and compassion of Lord Narasimha as he emerges to protect devotee Prahlada and vanquish evil in this groundbreaking animated epic."
+  },
+  "cast": {
+    "voiceActors": [
+      {
+        "name": "Rana Daggubati",
+        "role": "Lord Narasimha",
+        "language": "Telugu/Hindi",
+        "image": "/images/cast/rana.jpg",
+        "bio": "Renowned actor known for Baahubali series"
+      },
+      {
+        "name": "Nani",
+        "role": "Prahlada",
+        "language": "Telugu",
+        "image": "/images/cast/nani.jpg",
+        "bio": "Natural Star of Telugu cinema"
+      },
+      {
+        "name": "Prakash Raj",
+        "role": "Hiranyakashipu",
+        "language": "All languages",
+        "image": "/images/cast/prakash.jpg",
+        "bio": "Veteran actor with powerful voice"
+      },
+      {
+        "name": "Ramya Krishna",
+        "role": "Kayadhu",
+        "language": "Telugu/Tamil",
+        "image": "/images/cast/ramya.jpg",
+        "bio": "Iconic actress known for Baahubali"
+      }
+    ],
+    "directors": [
+      {
+        "name": "Ashwin Kumar",
+        "role": "Director",
+        "previousWorks": ["Little Krishna", "Arjun: The Warrior Prince"]
+      }
+    ],
+    "producers": [
+      {
+        "name": "Karan Johar",
+        "role": "Producer",
+        "company": "Dharma Productions"
+      },
+      {
+        "name": "SS Rajamouli",
+        "role": "Creative Producer",
+        "company": "DVV Entertainment"
+      }
+    ],
+    "musicDirector": {
+      "name": "MM Keeravani",
+      "previousWorks": ["RRR", "Baahubali", "Magadheera"]
+    },
+    "animationDirector": {
+      "name": "Rajesh Turlapati",
+      "studio": "Harihara Animation Studios"
+    }
+  },
+  "characters": [
+    {
+      "name": "Lord Narasimha",
+      "description": "The fierce man-lion avatar of Lord Vishnu",
+      "traits": ["Divine", "Protective", "Fierce", "Compassionate"],
+      "significance": "Fourth avatar of Vishnu, protector of devotees",
+      "image": "/images/characters/narasimha.jpg"
+    },
+    {
+      "name": "Prahlada",
+      "description": "Young devotee of Lord Vishnu",
+      "traits": ["Devoted", "Fearless", "Pure", "Wise beyond years"],
+      "significance": "Symbol of unwavering faith and devotion",
+      "image": "/images/characters/prahlada.jpg"
+    },
+    {
+      "name": "Hiranyakashipu",
+      "description": "Powerful demon king and father of Prahlada",
+      "traits": ["Arrogant", "Powerful", "Tyrannical", "Anti-god"],
+      "significance": "Represents ego and material power",
+      "image": "/images/characters/hiranyakashipu.jpg"
+    },
+    {
+      "name": "Kayadhu",
+      "description": "Wife of Hiranyakashipu and mother of Prahlada",
+      "traits": ["Compassionate", "Devoted", "Protective", "Gentle"],
+      "significance": "Represents maternal love and righteousness",
+      "image": "/images/characters/kayadhu.jpg"
+    },
+    {
+      "name": "Holika",
+      "description": "Sister of Hiranyakashipu with fire immunity",
+      "traits": ["Cunning", "Loyal to brother", "Overconfident"],
+      "significance": "Her defeat symbolizes good over evil (Holi festival)",
+      "image": "/images/characters/holika.jpg"
+    },
+    {
+      "name": "Lord Vishnu",
+      "description": "The Supreme deity and preserver",
+      "traits": ["Omnipotent", "Benevolent", "Just", "Protective"],
+      "significance": "The divine force behind all avatars",
+      "image": "/images/characters/vishnu.jpg"
+    },
+    {
+      "name": "Narada",
+      "description": "Divine sage and devotee of Vishnu",
+      "traits": ["Wise", "Mischievous", "Devoted", "Wandering"],
+      "significance": "Catalyst in divine plays",
+      "image": "/images/characters/narada.jpg"
+    },
+    {
+      "name": "Indra",
+      "description": "King of gods",
+      "traits": ["Powerful", "Strategic", "Leader"],
+      "significance": "Represents divine order",
+      "image": "/images/characters/indra.jpg"
+    }
+  ],
+  "soundtrack": [
+    {
+      "title": "Narasimha Stotram",
+      "duration": "5:23",
+      "singer": "SP Balasubrahmanyam",
+      "type": "Devotional"
+    },
+    {
+      "title": "Prahlada's Prayer",
+      "duration": "4:15",
+      "singer": "Shreya Ghoshal",
+      "type": "Emotional"
+    },
+    {
+      "title": "Battle of Dharma",
+      "duration": "6:45",
+      "singer": "Instrumental",
+      "type": "Epic Battle Theme"
+    },
+    {
+      "title": "Mother's Lullaby",
+      "duration": "3:30",
+      "singer": "K.S. Chithra",
+      "type": "Lullaby"
+    },
+    {
+      "title": "Rise of Evil",
+      "duration": "4:50",
+      "singer": "Instrumental",
+      "type": "Villain Theme"
+    }
+  ],
+  "trailers": [
+    {
+      "title": "Official Teaser",
+      "releaseDate": "2024-11-15",
+      "duration": "1:30",
+      "youtubeId": "dQw4w9WgXcQ",
+      "views": "5.2M",
+      "thumbnail": "/images/trailers/teaser.jpg"
+    },
+    {
+      "title": "Official Trailer",
+      "releaseDate": "2025-01-15",
+      "duration": "2:45",
+      "youtubeId": "dQw4w9WgXcQ",
+      "views": "12.5M",
+      "thumbnail": "/images/trailers/trailer.jpg"
+    },
+    {
+      "title": "Character Introduction - Narasimha",
+      "releaseDate": "2025-02-01",
+      "duration": "1:15",
+      "youtubeId": "dQw4w9WgXcQ",
+      "views": "3.8M",
+      "thumbnail": "/images/trailers/character.jpg"
+    }
+  ],
+  "socialMedia": {
+    "twitter": "@MahavatarFilm",
+    "instagram": "@mahavatarnarsimha",
+    "facebook": "MahavatarNarsimhaOfficial",
+    "youtube": "@HariharaAnimations",
+    "hashtags": ["#MahavatarNarsimha", "#DivineCinema", "#AnimatedEpic", "#Narasimha2025"]
+  },
+  "awards": [
+    {
+      "name": "Best Animation Film",
+      "event": "National Film Awards (Expected)",
+      "year": "2025"
+    },
+    {
+      "name": "Best Visual Effects",
+      "event": "Filmfare Awards (Nominated)",
+      "year": "2025"
+    }
+  ],
+  "trivia": [
+    "First Indian animated film with a budget exceeding ₹50 crores",
+    "Features voice actors from 5 different Indian languages",
+    "Took 4 years in production with over 500 artists",
+    "Uses motion capture technology for realistic animation",
+    "Soundtrack recorded with 100-piece orchestra in Prague",
+    "Consulted with 50+ Hindu scholars for authenticity",
+    "Features 8 original Sanskrit shlokas composed for the film"
+  ],
+  "technicalSpecs": {
+    "animation": "3D Computer Animation",
+    "renderEngine": "Unreal Engine 5",
+    "frameRate": "24 fps",
+    "resolution": "4K Ultra HD",
+    "soundMix": "Dolby Atmos",
+    "aspectRatio": "2.39:1",
+    "colorFormat": "HDR10+"
+  },
+  "merchandise": [
+    {
+      "type": "Action Figures",
+      "items": ["Narasimha Figure", "Prahlada Figure", "Complete Character Set"],
+      "priceRange": "₹499 - ₹2999"
+    },
+    {
+      "type": "Books",
+      "items": ["Art Book", "Making of Mahavatar", "Comic Series"],
+      "priceRange": "₹299 - ₹1499"
+    },
+    {
+      "type": "Apparel",
+      "items": ["T-Shirts", "Hoodies", "Traditional Wear"],
+      "priceRange": "₹599 - ₹2499"
+    }
+  ],
+  "boxOfficeProjection": {
+    "openingDay": "₹15 Crores",
+    "openingWeekend": "₹45 Crores",
+    "firstWeek": "₹85 Crores",
+    "lifetime": "₹250 Crores",
+    "overseasProjection": "$15 Million"
+  },
+  "releaseStrategy": {
+    "india": {
+      "screens": 3500,
+      "languages": 5,
+      "formats": ["2D", "3D", "IMAX", "4DX"]
+    },
+    "international": {
+      "countries": 25,
+      "screens": 1500,
+      "subtitles": ["English", "Mandarin", "Spanish", "Arabic"]
+    }
+  },
+  "culturalSignificance": {
+    "festivals": ["Special screenings during Narasimha Jayanti", "Holi festival tie-ins"],
+    "educationalTieIns": ["School screening programs", "Mythology workshops"],
+    "templeCollaborations": ["Special prayers at Narasimha temples", "Charity screenings"]
+  }
+}

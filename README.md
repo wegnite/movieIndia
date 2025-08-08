@@ -1,6 +1,6 @@
-# ShipAny Template One
+# Mahavatar Narsimha - Official Movie Website
 
-Ship Any AI SaaS Startups in hours.
+Experience the divine incarnation of Lord Vishnu as Narsimha in this epic animated mythological film.
 
 ![preview](preview.png)
 
@@ -9,7 +9,7 @@ Ship Any AI SaaS Startups in hours.
 1. Clone the repository
 
 ```bash
-git clone https://github.com/shipanyai/shipany-template-one.git
+git clone https://github.com/mahavatarnarsimha/official-website.git
 ```
 
 2. Install dependencies

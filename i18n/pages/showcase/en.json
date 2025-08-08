@@ -1,88 +1,115 @@
 {
   "showcase": {
     "name": "showcase",
-    "title": "AI SaaS Startups built with ShipAny",
-    "description": "Easy to use and fast to ship.",
+    "title": "Gallery & Behind the Scenes",
+    "description": "Exclusive glimpses from the making of Mahavatar Narsimha.",
     "items": [
       {
-        "title": "ThinkAny",
-        "description": "AI Search Engine",
-        "url": "https://thinkany.ai",
-        "target": "_blank",
-        "image": {
-          "src": "/imgs/showcases/7.png"
-        }
-      },
-      {
-        "title": "HeyBeauty",
-        "description": "AI Virtual Try On",
-        "url": "https://heybeauty.ai",
-        "target": "_blank",
-        "image": {
-          "src": "/imgs/showcases/5.png"
-        }
-      },
-      {
-        "title": "AI Wallpaper",
-        "description": "AI Wallpaper Generator",
-        "url": "https://aiwallpaper.shop",
-        "target": "_blank",
+        "title": "Narsimha's Emergence",
+        "description": "The divine avatar manifests in all his glory",
+        "url": "#",
+        "target": "_self",
         "image": {
           "src": "/imgs/showcases/1.png"
         }
       },
       {
-        "title": "AI Cover",
-        "description": "AI Cover Generator",
-        "url": "https://aicover.design",
-        "target": "_blank",
+        "title": "Prahlad's Devotion",
+        "description": "Young Prahlad's unwavering faith in Lord Vishnu",
+        "url": "#",
+        "target": "_self",
         "image": {
           "src": "/imgs/showcases/2.png"
         }
       },
       {
-        "title": "GPTs Works",
-        "description": "GPTs Directory",
-        "url": "https://gpts.works",
-        "target": "_blank",
+        "title": "Varaha Avatar",
+        "description": "Lord Vishnu as Varaha rescuing Mother Earth",
+        "url": "#",
+        "target": "_self",
         "image": {
           "src": "/imgs/showcases/3.png"
         }
       },
       {
-        "title": "Melodisco",
-        "description": "AI Music Player",
-        "url": "https://melodis.co",
-        "target": "_blank",
+        "title": "Hiranyakashipu's Palace",
+        "description": "The grand palace of the demon king",
+        "url": "#",
+        "target": "_self",
         "image": {
           "src": "/imgs/showcases/4.png"
         }
       },
       {
-        "title": "Pagen",
-        "description": "AI Landing Page Generator",
-        "url": "https://pagen.so",
-        "target": "_blank",
+        "title": "The Final Battle",
+        "description": "Epic confrontation between good and evil",
+        "url": "#",
+        "target": "_self",
+        "image": {
+          "src": "/imgs/showcases/5.png"
+        }
+      },
+      {
+        "title": "Animation Studio",
+        "description": "Behind the scenes of animation production",
+        "url": "#",
+        "target": "_self",
         "image": {
           "src": "/imgs/showcases/6.png"
         }
       },
       {
-        "title": "SoraFM",
-        "description": "AI Video Generator",
-        "url": "https://sorafm.trys.ai",
-        "target": "_blank",
+        "title": "Voice Recording",
+        "description": "Voice artists bringing characters to life",
+        "url": "#",
+        "target": "_self",
+        "image": {
+          "src": "/imgs/showcases/7.png"
+        }
+      },
+      {
+        "title": "Music Composition",
+        "description": "Creating the divine soundtrack",
+        "url": "#",
+        "target": "_self",
         "image": {
           "src": "/imgs/showcases/8.png"
         }
       },
       {
-        "title": "PodLM",
-        "description": "AI Podcast Generator",
-        "url": "https://podlm.ai",
-        "target": "_blank",
+        "title": "Character Design",
+        "description": "Concept art and character development",
+        "url": "#",
+        "target": "_self",
         "image": {
           "src": "/imgs/showcases/9.png"
+        }
+      },
+      {
+        "title": "Director's Vision",
+        "description": "Ashwin Kumar discussing his creative process",
+        "url": "#",
+        "target": "_self",
+        "image": {
+          "src": "/imgs/showcases/10.png"
+        }
+      },
+      {
+        "title": "Cultural Research",
+        "description": "Extensive research into Hindu mythology",
+        "url": "#",
+        "target": "_self",
+        "image": {
+          "src": "/imgs/showcases/11.png"
+        }
+      },
+      {
+        "title": "Visual Effects",
+        "description": "Creating the divine visual spectacle",
+        "url": "#",
+        "target": "_self",
+        "image": {
+          "src": "/imgs/showcases/12.png"
         }
       }
     ]

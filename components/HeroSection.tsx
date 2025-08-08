@@ -1,9 +1,20 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 const HeroSection = () => {
+  const [particles, setParticles] = useState<Array<{ left: number; animationDelay: number; animationDuration: number }>>([]);
+  
+  useEffect(() => {
+    // Generate random particles on client side only
+    const generatedParticles = [...Array(20)].map(() => ({
+      left: Math.random() * 100,
+      animationDelay: Math.random() * 5,
+      animationDuration: 15 + Math.random() * 10,
+    }));
+    setParticles(generatedParticles);
+  }, []);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -23,14 +34,14 @@ const HeroSection = () => {
           {/* Animated Particles Effect */}
           <div className="absolute inset-0">
             <div className="particle-container">
-              {[...Array(20)].map((_, i) => (
+              {particles.map((particle, i) => (
                 <div
                   key={i}
                   className="particle"
                   style={{
-                    left: `${Math.random() * 100}%`,
-                    animationDelay: `${Math.random() * 5}s`,
-                    animationDuration: `${15 + Math.random() * 10}s`
+                    left: `${particle.left}%`,
+                    animationDelay: `${particle.animationDelay}s`,
+                    animationDuration: `${particle.animationDuration}s`
                   }}
                 />
               ))}

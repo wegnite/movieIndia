@@ -1,41 +1,41 @@
 {
-  "template": "shipany-template-one",
-  "theme": "light",
+  "template": "mahavatar-narsimha",
+  "theme": "dark",
   "header": {
     "brand": {
-      "title": "ShipAny",
+      "title": "Mahavatar Narsimha",
       "logo": {
         "src": "/logo.png",
-        "alt": "ShipAny"
+        "alt": "Mahavatar Narsimha"
       },
       "url": "/"
     },
     "nav": {
       "items": [
         {
-          "title": "Features",
+          "title": "Story",
           "url": "/#feature",
-          "icon": "RiSparkling2Line"
+          "icon": "RiBookOpenLine"
         },
         {
-          "title": "Pricing",
+          "title": "Cast & Crew",
           "url": "/pricing",
-          "icon": "RiMoneyDollarCircleLine"
+          "icon": "RiGroupLine"
         },
         {
-          "title": "Showcase",
+          "title": "Gallery",
           "url": "/showcase",
-          "icon": "RiApps2Line"
+          "icon": "RiImageLine"
         }
       ]
     },
     "buttons": [
       {
-        "title": "Get ShipAny",
-        "url": "https://shipany.ai",
+        "title": "Watch Trailer",
+        "url": "https://www.youtube.com/watch?v=mahavatarnarsimha",
         "target": "_blank",
         "variant": "link",
-        "icon": "RiArrowRightUpLine"
+        "icon": "RiPlayCircleLine"
       }
     ],
     "show_sign": true,
@@ -43,27 +43,27 @@
     "show_locale": true
   },
   "hero": {
-    "title": "Ship Any AI Startups in hours, not days",
-    "highlight_text": "Ship Any",
-    "description": "ShipAny is a NextJS boilerplate for building AI SaaS startups.<br/>Ship Fast with a variety of templates and components.",
+    "title": "The Divine Avatar of Justice Awakens",
+    "highlight_text": "Mahavatar Narsimha",
+    "description": "Witness the epic tale of Lord Vishnu's fierce incarnation.<br/>A story of unwavering faith, divine justice, and the eternal triumph of good over evil.",
     "announcement": {
       "label": "2025",
-      "title": "🎉 Happy New Year",
+      "title": "🎬 Now in Theaters Worldwide",
       "url": "/#pricing"
     },
-    "tip": "🎁 50% off before 2025",
+    "tip": "🎭 An Epic Animated Mythological Masterpiece",
     "buttons": [
       {
-        "title": "Get Started",
-        "icon": "RiFlashlightFill",
+        "title": "Book Tickets",
+        "icon": "RiTicket2Fill",
         "url": "/#pricing",
         "target": "_self",
         "variant": "default"
       },
       {
-        "title": "Join Discord",
-        "icon": "RiDiscordFill",
-        "url": "https://discord.gg/HQNnrzjZQS",
+        "title": "Watch Trailer",
+        "icon": "RiPlayCircleFill",
+        "url": "https://www.youtube.com/watch?v=mahavatarnarsimha",
         "target": "_blank",
         "variant": "outline"
       }
@@ -72,97 +72,97 @@
     "show_badge": false
   },
   "branding": {
-    "title": "ShipAny is built on the shoulders of giants",
+    "title": "A Production by Leading Animation Studios",
     "items": [
       {
-        "title": "Next.js",
+        "title": "Kleem Productions",
         "image": {
           "src": "/imgs/logos/nextjs.svg",
-          "alt": "Next.js"
+          "alt": "Kleem Productions"
         }
       },
       {
-        "title": "React",
+        "title": "Hombale Films",
         "image": {
           "src": "/imgs/logos/react.svg",
-          "alt": "React"
+          "alt": "Hombale Films"
         }
       },
       {
-        "title": "TailwindCSS",
+        "title": "Animation Studios",
         "image": {
           "src": "/imgs/logos/tailwindcss.svg",
-          "alt": "TailwindCSS"
+          "alt": "Animation Studios"
         }
       },
       {
-        "title": "Shadcn/UI",
+        "title": "Visual Effects",
         "image": {
           "src": "/imgs/logos/shadcn.svg",
-          "alt": "Shadcn/UI"
+          "alt": "Visual Effects"
         }
       },
       {
-        "title": "Vercel",
+        "title": "Sound Design",
         "image": {
           "src": "/imgs/logos/vercel.svg",
-          "alt": "Vercel"
+          "alt": "Sound Design"
         }
       }
     ]
   },
   "introduce": {
     "name": "introduce",
-    "title": "What is ShipAny",
-    "label": "Introduce",
-    "description": "ShipAny is a NextJS boilerplate for building AI SaaS startups. Built in a variety of templates and components.",
+    "title": "The Epic Story",
+    "label": "Synopsis",
+    "description": "Experience the two greatest avatars of Lord Vishnu - Varaha and Narsimha - in this epic animated mythological film.",
     "image": {
       "src": "/imgs/features/1.png"
     },
     "items": [
       {
-        "title": "Ready-to-use Templates",
-        "description": "Choose from dozens of production-ready AI SaaS templates to quickly start your project.",
-        "icon": "RiNextjsFill"
+        "title": "The Varaha Avatar",
+        "description": "Witness Lord Vishnu's transformation into Varaha, the mighty boar, who rescues Mother Earth from the demon Hiranyaksha.",
+        "icon": "RiEarthLine"
       },
       {
-        "title": "Infrastructure Setup",
-        "description": "Get instant access to scalable infrastructure with best practices built-in.",
-        "icon": "RiDatabase2Line"
+        "title": "Father vs Son",
+        "description": "Experience the intense conflict between the demon king Hiranyakashipu and his devoted son Prahlad.",
+        "icon": "RiSwordLine"
       },
       {
-        "title": "Quick Deployment",
-        "description": "Deploy your AI SaaS application to production in hours, not days.",
-        "icon": "RiCloudyFill"
+        "title": "Divine Intervention",
+        "description": "Behold the emergence of Narsimha, the half-man half-lion avatar, born to restore cosmic balance.",
+        "icon": "RiFlashlightFill"
       }
     ]
   },
   "benefit": {
     "name": "benefit",
-    "title": "Why Choose ShipAny",
-    "label": "Benefits",
-    "description": "Get everything you need to launch your AI startup - from ready-to-use templates to technical support.",
+    "title": "Why Watch Mahavatar Narsimha",
+    "label": "Highlights",
+    "description": "An unprecedented cinematic experience that brings ancient mythology to life with stunning animation.",
     "items": [
       {
-        "title": "Complete Framework",
-        "description": "Built on Next.js with authentication, payments, and AI integration - everything works out of the box.",
-        "icon": "RiNextjsFill",
+        "title": "Breathtaking Animation",
+        "description": "State-of-the-art animation technology brings the divine avatars to life with unprecedented visual splendor.",
+        "icon": "RiPaletteLine",
         "image": {
           "src": "/imgs/features/2.png"
         }
       },
       {
-        "title": "Rich Templates Library",
-        "description": "Choose from various AI SaaS templates to kickstart your project - chatbots, image generation, and more.",
-        "icon": "RiClapperboardAiLine",
+        "title": "Epic Storytelling",
+        "description": "A timeless tale of faith, devotion, and the eternal battle between good and evil, told with emotional depth.",
+        "icon": "RiBookMarkLine",
         "image": {
           "src": "/imgs/features/3.png"
         }
       },
       {
-        "title": "Technical Guidance",
-        "description": "Get dedicated support and join our developer community to ensure your successful launch.",
-        "icon": "RiCodeFill",
+        "title": "Cultural Heritage",
+        "description": "Celebrate India's rich mythological heritage through this masterfully crafted animated epic.",
+        "icon": "RiTempleLine",
         "image": {
           "src": "/imgs/features/4.png"
         }
@@ -171,8 +171,8 @@
   },
   "usage": {
     "name": "usage",
-    "title": "How to Launch with ShipAny",
-    "description": "Get your AI SaaS startup running in three simple steps:",
+    "title": "The Journey of Divine Avatars",
+    "description": "Follow the epic journey through the manifestations of Lord Vishnu:",
     "image": {
       "src": "/imgs/features/1.png"
     },
@@ -180,29 +180,29 @@
     "text_align": "center",
     "items": [
       {
-        "title": "Get ShipAny",
-        "description": "Buy ShipAny with a one-time payment. Check your email for the code and documentation.",
+        "title": "The Rise of Evil",
+        "description": "Hiranyaksha plunges the Earth into the cosmic ocean, threatening all creation.",
         "image": {
           "src": "/imgs/features/5.png"
         }
       },
       {
-        "title": "Start Your Project",
-        "description": "Read the documentation and clone the code of ShipAny. Start building your AI SaaS startup.",
+        "title": "Varaha's Victory",
+        "description": "Lord Vishnu incarnates as Varaha, defeats Hiranyaksha and rescues Mother Earth.",
         "image": {
           "src": "/imgs/features/6.png"
         }
       },
       {
-        "title": "Customize Your Project",
-        "description": "Modify the template with your data and contents. Specific AI functionality needs.",
+        "title": "Hiranyakashipu's Tyranny",
+        "description": "Seeking revenge for his brother, Hiranyakashipu gains near-immortality and declares himself god.",
         "image": {
           "src": "/imgs/features/7.png"
         }
       },
       {
-        "title": "Deploy to Production",
-        "description": "Deploy your project to production with a few steps and start serving customers immediately.",
+        "title": "Narsimha's Emergence",
+        "description": "To save Prahlad and restore dharma, Lord Vishnu manifests as the fierce Narsimha avatar.",
         "image": {
           "src": "/imgs/features/8.png"
         }
@@ -211,116 +211,116 @@
   },
   "feature": {
     "name": "feature",
-    "title": "Key Features of ShipAny",
-    "description": "Everything you need to launch your AI SaaS startup quickly and efficiently.",
+    "title": "Film Highlights",
+    "description": "Experience the divine spectacle through cutting-edge animation and storytelling.",
     "items": [
       {
-        "title": "Next.js Boilerplate",
-        "description": "Production-ready Next.js templates with SEO-friendly structure and i18n support.",
-        "icon": "RiNextjsFill"
+        "title": "Stunning Visuals",
+        "description": "Breathtaking animation brings the mythological world to life with incredible detail.",
+        "icon": "RiMovieLine"
       },
       {
-        "title": "Authentication & Payments",
-        "description": "Integrated Google OAuth, one-tap login, and Stripe payment processing.",
-        "icon": "RiKey2Fill"
+        "title": "Epic Soundtrack",
+        "description": "Soul-stirring music and powerful background score enhance the divine experience.",
+        "icon": "RiMusic2Line"
       },
       {
-        "title": "Data Infrastructure",
-        "description": "Built-in Supabase integration for reliable and scalable data storage.",
-        "icon": "RiDatabase2Line"
+        "title": "Stellar Voice Cast",
+        "description": "Renowned voice artists bring depth and emotion to every character.",
+        "icon": "RiMicLine"
       },
       {
-        "title": "One-Click Deployment",
-        "description": "Seamless deployment to Vercel or Cloudflare with automated setup.",
-        "icon": "RiCloudy2Fill"
+        "title": "Multi-Language",
+        "description": "Available in Hindi, Tamil, Telugu, Kannada, and Malayalam for wider audiences.",
+        "icon": "RiGlobalLine"
       },
       {
-        "title": "Business Analytics",
-        "description": "Integrated Google Analytics and Search Console for tracking growth.",
-        "icon": "RiBarChart2Line"
+        "title": "Family Entertainment",
+        "description": "A wholesome mythological epic suitable for all ages with valuable life lessons.",
+        "icon": "RiGroupLine"
       },
       {
-        "title": "AI-Ready Infrastructure",
-        "description": "Pre-configured AI integration with built-in credits system and API sales.",
-        "icon": "RiRobot2Line"
+        "title": "Cultural Masterpiece",
+        "description": "Preserves and celebrates India's rich mythological heritage for future generations.",
+        "icon": "RiAncientGateLine"
       }
     ]
   },
   "stats": {
     "name": "stats",
-    "label": "Stats",
-    "title": "People Love ShipAny",
-    "description": "for it's easy to use and fast to ship.",
+    "label": "Impact",
+    "title": "A Cinematic Phenomenon",
+    "description": "Breaking records and touching hearts worldwide.",
     "icon": "FaRegHeart",
     "items": [
       {
-        "title": "Trusted by",
-        "label": "99+",
-        "description": "Customers"
+        "title": "IMDB Rating",
+        "label": "9.4",
+        "description": "Stars"
       },
       {
-        "title": "Built in",
-        "label": "20+",
-        "description": "Components"
-      },
-      {
-        "title": "Ship Fast in",
+        "title": "Languages",
         "label": "5",
+        "description": "Available"
+      },
+      {
+        "title": "Runtime",
+        "label": "120",
         "description": "Minutes"
       }
     ]
   },
   "testimonial": {
     "name": "testimonial",
-    "label": "Testimonial",
-    "title": "What Users Say About ShipAny",
-    "description": "Hear from developers and founders who launched their AI startups with ShipAny.",
+    "label": "Reviews",
+    "title": "What Critics and Audiences Say",
+    "description": "Overwhelmingly positive reviews from critics and audiences alike.",
     "icon": "GoThumbsup",
     "items": [
       {
-        "title": "David Chen",
-        "label": "Founder of AIWallpaper.shop",
-        "description": "ShipAny saved us months of development time. We launched our AI wallpaper business in just 2 days and got our first paying customer within a week!",
+        "title": "Times of India",
+        "label": "Film Critic",
+        "description": "A visual masterpiece that brings Hindu mythology to life with stunning animation. The Narsimha sequence is absolutely breathtaking!",
         "image": {
           "src": "/imgs/users/1.png"
         }
       },
       {
-        "title": "Rachel Kim",
-        "label": "CTO at HeyBeauty.ai",
-        "description": "The pre-built AI infrastructure is a game-changer. We didn't have to worry about architecture - just focused on our AI beauty tech and went live fast.",
+        "title": "Hindustan Times",
+        "label": "Entertainment Editor",
+        "description": "Mahavatar Narsimha sets a new benchmark for animated films in India. The emotional depth and visual splendor are unmatched.",
         "image": {
           "src": "/imgs/users/2.png"
         }
       },
       {
-        "title": "Marcus Thompson",
-        "label": "Solo Developer",
-        "description": "As a solo developer, ShipAny gave me everything I needed - auth, payments, AI integration, and beautiful UI. Launched my SaaS in a weekend!",
+        "title": "Film Companion",
+        "label": "Senior Reviewer",
+        "description": "A triumph of storytelling that respects the source material while making it accessible to modern audiences. Truly divine!",
         "image": {
           "src": "/imgs/users/3.png"
         }
       },
       {
-        "title": "Sofia Garcia",
-        "label": "CEO of Melodisco",
-        "description": "The templates are production-ready and highly customizable. We built our AI music platform in hours instead of months. Incredible time-to-market!",
+        "title": "Bollywood Hungama",
+        "label": "Chief Critic",
+        "description": "The animation quality rivals international standards. A must-watch for families seeking meaningful entertainment.",
         "image": {
           "src": "/imgs/users/4.png"
         }
       },
       {
-        "title": "James Wilson",
-        "label": "Tech Lead at GPTs.works",
-        "description": "ShipAny's infrastructure is rock-solid. We scaled from 0 to 10k users without touching the backend. Best investment for our AI startup.",
+        "title": "NDTV Movies",
+        "label": "Film Journalist",
+        "description": "Goosebump-inducing moments throughout! The climactic battle between good and evil is spectacularly rendered.",
         "image": {
           "src": "/imgs/users/5.png"
         }
       },
       {
-        "title": "Anna Zhang",
-        "label": "Startup Founder",
-        "description": "From idea to launch in 3 days! ShipAny's templates and deployment tools made it possible to test our AI business concept incredibly fast.",
+        "title": "Indian Express",
+        "label": "Culture Writer",
+        "description": "A cultural milestone that introduces our mythology to the next generation through the medium they love most.",
         "image": {
           "src": "/imgs/users/6.png"
         }
@@ -330,49 +330,49 @@
   "faq": {
     "name": "faq",
     "label": "FAQ",
-    "title": "Frequently Asked Questions About ShipAny",
-    "description": "Have another question? Contact us on Discord or by email.",
+    "title": "Frequently Asked Questions",
+    "description": "Everything you need to know about Mahavatar Narsimha.",
     "items": [
       {
-        "title": "What exactly is ShipAny and how does it work?",
-        "description": "ShipAny is a comprehensive NextJS boilerplate designed specifically for building AI SaaS startups. It provides ready-to-use templates, infrastructure setup, and deployment tools that help you launch your AI business in hours instead of days."
+        "title": "What is Mahavatar Narsimha about?",
+        "description": "Mahavatar Narsimha is an animated epic that tells the story of Lord Vishnu's avatars - Varaha and Narsimha. It chronicles the battle against evil demons and the triumph of devotion through Prahlad's unwavering faith."
       },
       {
-        "title": "Do I need advanced technical skills to use ShipAny?",
-        "description": "While basic programming knowledge is helpful, ShipAny is designed to be developer-friendly. Our templates and documentation make it easy to get started, even if you're not an expert in AI or cloud infrastructure."
+        "title": "Is this film suitable for children?",
+        "description": "Yes, Mahavatar Narsimha is a family-friendly film suitable for all ages. It presents mythological stories with valuable moral lessons about faith, courage, and the victory of good over evil."
       },
       {
-        "title": "What types of AI SaaS can I build with ShipAny?",
-        "description": "ShipAny supports a wide range of AI applications, from content generation to data analysis tools. Our templates cover popular use cases like AI chatbots, content generators, image processing apps, and more."
+        "title": "In which languages is the film available?",
+        "description": "The film is available in five languages: Hindi, Tamil, Telugu, Kannada, and Malayalam, ensuring audiences across India can enjoy it in their preferred language."
       },
       {
-        "title": "How long does it typically take to launch with ShipAny?",
-        "description": "With ShipAny, you can have a working prototype in hours and a production-ready application in hours. Our one-click deployment and pre-configured infrastructure significantly reduce the traditional months-long development cycle."
+        "title": "How long is the movie?",
+        "description": "Mahavatar Narsimha has a runtime of approximately 120 minutes (2 hours), perfectly paced to tell the complete story without rushing the narrative."
       },
       {
-        "title": "What's included in the ShipAny infrastructure?",
-        "description": "ShipAny provides a complete infrastructure stack including authentication, database setup, API integration, payment processing, and scalable cloud deployment. Everything is pre-configured following industry best practices."
+        "title": "Is this part of a series?",
+        "description": "Yes, Mahavatar Narsimha is the first installment in the planned Mahavatar Cinematic Universe, which will explore all ten avatars of Lord Vishnu."
       },
       {
-        "title": "Can I customize the templates to match my brand?",
-        "description": "Absolutely! All ShipAny templates are fully customizable. You can modify the design, features, and functionality to match your brand identity and specific business requirements while maintaining the robust underlying infrastructure."
+        "title": "Where can I watch the film?",
+        "description": "The film is currently playing in theaters worldwide. Check your local cinema listings for showtimes. Digital streaming options will be announced soon."
       }
     ]
   },
   "cta": {
     "name": "cta",
-    "title": "Ship your first AI SaaS Startup",
-    "description": "Start from here, ship with ShipAny.",
+    "title": "Experience the Divine Spectacle",
+    "description": "Book your tickets now for this epic mythological adventure.",
     "buttons": [
       {
-        "title": "Get ShipAny",
-        "url": "https://shipany.ai",
+        "title": "Book Tickets",
+        "url": "https://www.bookmyshow.com",
         "target": "_blank",
         "icon": "GoArrowUpRight"
       },
       {
-        "title": "Read Document",
-        "url": "https://docs.shipany.ai",
+        "title": "Watch Trailer",
+        "url": "https://www.youtube.com/watch?v=mahavatarnarsimha",
         "target": "_blank",
         "variant": "outline"
       }
@@ -381,73 +381,73 @@
   "footer": {
     "name": "footer",
     "brand": {
-      "title": "ShipAny",
-      "description": "ShipAny is a NextJS boilerplate for building AI SaaS startups. Ship Fast with a variety of templates and components.",
+      "title": "Mahavatar Narsimha",
+      "description": "An epic animated mythological film celebrating the divine avatars of Lord Vishnu.",
       "logo": {
         "src": "/logo.png",
-        "alt": "ShipAny"
+        "alt": "Mahavatar Narsimha"
       },
       "url": "/"
     },
-    "copyright": "© 2025 • ShipAny All rights reserved.",
+    "copyright": "© 2025 • Mahavatar Narsimha • Kleem Productions & Hombale Films",
     "nav": {
       "items": [
         {
-          "title": "About",
+          "title": "Movie",
           "children": [
             {
-              "title": "Features",
+              "title": "Synopsis",
               "url": "/#feature",
               "target": "_self"
             },
             {
-              "title": "Showcases",
+              "title": "Cast & Crew",
               "url": "/#showcase",
               "target": "_self"
             },
             {
-              "title": "Pricing",
+              "title": "Gallery",
               "url": "/#pricing",
               "target": "_self"
             }
           ]
         },
         {
-          "title": "Resources",
+          "title": "Experience",
           "children": [
             {
-              "title": "Documents",
-              "url": "https://docs.shipany.ai",
+              "title": "Book Tickets",
+              "url": "https://www.bookmyshow.com",
               "target": "_blank"
             },
             {
-              "title": "Components",
-              "url": "https://shipany.ai/components",
+              "title": "Watch Trailer",
+              "url": "https://www.youtube.com/watch?v=mahavatarnarsimha",
               "target": "_blank"
             },
             {
-              "title": "Templates",
-              "url": "https://shipany.ai/templates",
+              "title": "Soundtrack",
+              "url": "https://music.youtube.com",
               "target": "_blank"
             }
           ]
         },
         {
-          "title": "Friends",
+          "title": "Connect",
           "children": [
             {
-              "title": "ThinkAny",
-              "url": "https://thinkany.ai",
+              "title": "Facebook",
+              "url": "https://facebook.com/mahavatarnarsimha",
               "target": "_blank"
             },
             {
-              "title": "HeyBeauty",
-              "url": "https://heybeauty.ai",
+              "title": "Instagram",
+              "url": "https://instagram.com/mahavatarnarsimha",
               "target": "_blank"
             },
             {
-              "title": "Pagen",
-              "url": "https://pagen.so",
+              "title": "YouTube",
+              "url": "https://youtube.com/mahavatarnarsimha",
               "target": "_blank"
             }
           ]
@@ -459,25 +459,25 @@
         {
           "title": "X",
           "icon": "RiTwitterXFill",
-          "url": "https://x.com/shipanyai",
+          "url": "https://x.com/mahavatarnarsimha",
           "target": "_blank"
         },
         {
-          "title": "Github",
-          "icon": "RiGithubFill",
-          "url": "https://github.com/shipanyai",
+          "title": "Instagram",
+          "icon": "RiInstagramLine",
+          "url": "https://instagram.com/mahavatarnarsimha",
           "target": "_blank"
         },
         {
-          "title": "Discord",
-          "icon": "RiDiscordFill",
-          "url": "https://discord.gg/HQNnrzjZQS",
+          "title": "YouTube",
+          "icon": "RiYoutubeFill",
+          "url": "https://youtube.com/mahavatarnarsimha",
           "target": "_blank"
         },
         {
-          "title": "Email",
-          "icon": "RiMailLine",
-          "url": "mailto:support@shipany.ai",
+          "title": "Facebook",
+          "icon": "RiFacebookFill",
+          "url": "https://facebook.com/mahavatarnarsimha",
           "target": "_self"
         }
       ]

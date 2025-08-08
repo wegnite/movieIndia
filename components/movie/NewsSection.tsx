@@ -37,7 +37,7 @@ export default function NewsSection({ news }: Props) {
                 <span className="font-medium">{item.source}</span>
                 <div className="flex items-center gap-1">
                   <Calendar className="w-4 h-4" />
-                  <span>{new Date(item.date).toLocaleDateString()}</span>
+                  <span>{new Date(item.date).toLocaleDateString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric' })}</span>
                 </div>
               </div>
             </div>
