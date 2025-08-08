@@ -116,6 +116,8 @@
     "@types/uuid": "^10.0.0",
     "cross-env": "^7.0.3",
     "postcss": "^8.4.49",
+    "sharp": "^0.34.3",
+    "sharp-cli": "^5.2.0",
     "tailwindcss": "^4.1.4",
     "typescript": "^5.7.2",
     "vercel": "39.1.1",
