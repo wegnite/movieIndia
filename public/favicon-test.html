@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Test - Mahavatar Narsimha</title>
+    <meta charset="utf-8">
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .test { margin: 20px 0; padding: 15px; border: 1px solid #ddd; }
+        .success { background: #d4edda; }
+        .fail { background: #f8d7da; }
+        img { border: 1px solid #ccc; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Favicon & SEO Test Page</h1>
+    
+    <div class="test">
+        <h2>Favicon Files Available:</h2>
+        <img src="/favicon.ico" width="32" alt="favicon.ico">
+        <img src="/favicon-16x16.png" width="16" alt="16x16">
+        <img src="/favicon-32x32.png" width="32" alt="32x32">
+        <img src="/apple-touch-icon.png" width="60" alt="Apple Touch Icon">
+        <img src="/android-chrome-192x192.png" width="60" alt="Android Chrome">
+    </div>
+
+    <div class="test">
+        <h2>SEO Files Check:</h2>
+        <ul>
+            <li><a href="/sitemap.xml" target="_blank">✅ Sitemap.xml</a></li>
+            <li><a href="/robots.txt" target="_blank">✅ Robots.txt</a></li>
+            <li><a href="/site.webmanifest" target="_blank">✅ Web Manifest</a></li>
+        </ul>
+    </div>
+
+    <div class="test">
+        <h2>Google Requirements for Favicon:</h2>
+        <ul>
+            <li>✅ Multiple sizes available (16x16, 32x32, 192x192)</li>
+            <li>✅ Accessible at root domain</li>
+            <li>✅ Valid image format (PNG, ICO)</li>
+            <li>⏳ Waiting for Google to crawl and index (7-30 days)</li>
+        </ul>
+    </div>
+
+    <script>
+        // Test favicon loading
+        fetch('/favicon.ico').then(r => {
+            if(r.ok) console.log('✅ Favicon.ico is accessible');
+            else console.error('❌ Favicon.ico not found');
+        });
+    </script>
+</body>
+</html>
