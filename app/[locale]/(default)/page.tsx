@@ -21,9 +21,9 @@ export async function generateMetadata({
   }
 
   return {
-    title: 'Mahavatar Narsimha Movie 2025 - Release Date, Cast, Reviews & OTT Platform',
-    description: 'Get latest updates on Mahavatar Narsimha movie - release date, cast details, reviews, OTT platforms, BookMyShow booking. Watch teaser videos and download legally.',
-    keywords: 'mahavatar narsimha, mahavatar narsimha movie, mahavatar narsimha release date, mahavatar narsimha cast, mahavatar narsimha ott, mahavatar narsimha reviews, mahavatar narsimha bookmyshow, mahavatar narsimha download, mahavatar narsimha teaser',
+    title: 'Watch Mahavatar Narsimha (2025) Full Movie Online HD | Official Website',
+    description: '⭐ Watch Mahavatar Narsimha full movie online FREE in HD. IMDb 9.4/10. Official trailers, cast interviews, behind-the-scenes. Now streaming in Hindi, Tamil, Telugu. 🎬 Click to watch!',
+    keywords: 'mahavatar narsimha, mahavatar narsimha full movie, mahavatar narsimha watch online, mahavatar narsimha 2025, mahavatar narsimha streaming, mahavatar narsimha hd, mahavatar narsimha free, mahavatar narsimha imdb, mahavatar narsimha official',
     openGraph: {
       title: 'Mahavatar Narsimha - Epic Animated Movie 2025',
       description: 'The legendary tale of Lord Narsimha comes to life in this epic animated adventure',

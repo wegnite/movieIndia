@@ -9,7 +9,12 @@ interface Review {
   rating: number
   headline: string
   review: string
-  critic: string
+  critic?: string // Made optional for backward compatibility
+  userName?: string
+  userAvatar?: string
+  date?: string
+  likes?: number
+  verified?: boolean
 }
 
 interface Props {
@@ -61,8 +66,30 @@ export default function ReviewsSection({ reviews }: Props) {
             </div>
             <p className="text-gray-600 mb-4 line-clamp-3">{review.review}</p>
             <div className="border-t pt-4">
-              <p className="font-semibold text-gray-800">{review.critic}</p>
-              <p className="text-sm text-gray-600">{review.source}</p>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  {review.userAvatar && (
+                    <img 
+                      src={review.userAvatar} 
+                      alt={review.userName || review.critic || ''} 
+                      className="w-8 h-8 rounded-full"
+                    />
+                  )}
+                  <div>
+                    <p className="font-semibold text-gray-800">{review.userName || review.critic}</p>
+                    <p className="text-xs text-gray-600">{review.source}</p>
+                  </div>
+                </div>
+                {review.verified && (
+                  <span className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full">✓ Verified</span>
+                )}
+              </div>
+              {review.date && (
+                <p className="text-xs text-gray-500 mt-2">{review.date}</p>
+              )}
+              {review.likes !== undefined && (
+                <p className="text-xs text-gray-500 mt-1">👍 {review.likes} helpful</p>
+              )}
             </div>
           </motion.div>
         ))}
