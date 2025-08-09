@@ -25,6 +25,7 @@ export default function VideosSection({ videos }: Props) {
   
   const getVideoTypeIcon = (type: string) => {
     switch(type.toLowerCase()) {
+      case 'movie': return <Film className="w-4 h-4" />
       case 'trailer': return <Film className="w-4 h-4" />
       case 'teaser': return <Star className="w-4 h-4" />
       case 'behind-scenes': return <Eye className="w-4 h-4" />
@@ -35,11 +36,21 @@ export default function VideosSection({ videos }: Props) {
 
   const getVideoTypeBgColor = (type: string) => {
     switch(type.toLowerCase()) {
+      case 'movie': return 'bg-gradient-to-r from-red-600 to-red-700'
       case 'trailer': return 'bg-gradient-to-r from-red-500 to-orange-500'
       case 'teaser': return 'bg-gradient-to-r from-amber-500 to-yellow-500'
       case 'behind-scenes': return 'bg-gradient-to-r from-purple-500 to-indigo-500'
       case 'educational': return 'bg-gradient-to-r from-green-500 to-teal-500'
       default: return 'bg-gradient-to-r from-blue-500 to-cyan-500'
+    }
+  }
+  
+  const getVideoTypeLabel = (type: string) => {
+    switch(type.toLowerCase()) {
+      case 'movie': return 'FULL MOVIE'
+      case 'trailer': return 'FULL MOVIE'
+      case 'teaser': return 'FULL MOVIE'
+      default: return type.toUpperCase()
     }
   }
 
@@ -71,7 +82,7 @@ export default function VideosSection({ videos }: Props) {
           >
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent">
-                🎬 Watch Trailers & Videos
+                🎬 Watch Full Movie Online
               </span>
             </h2>
           </motion.div>
@@ -82,7 +93,7 @@ export default function VideosSection({ videos }: Props) {
               className="w-2 h-2 bg-red-500 rounded-full"
             />
             <p className="text-white text-lg max-w-2xl mx-auto font-medium">
-              Click to watch exclusive trailers, teasers, and behind-the-scenes content
+              Click to watch Mahavatar Narsimha complete movie in HD quality
             </p>
             <motion.div
               animate={{ opacity: [0.5, 1, 0.5] }}
@@ -92,10 +103,10 @@ export default function VideosSection({ videos }: Props) {
           </div>
           <div className="flex justify-center gap-4">
             <span className="bg-red-600/20 border border-red-500/50 text-red-300 px-4 py-1 rounded-full text-sm font-semibold">
-              🔥 HOT: New Trailer Released
+              🔥 HOT: Watch Full Movie Now
             </span>
             <span className="bg-yellow-600/20 border border-yellow-500/50 text-yellow-300 px-4 py-1 rounded-full text-sm font-semibold">
-              ⭐ Must Watch
+              ⭐ HD Quality Available
             </span>
           </div>
         </motion.div>
@@ -162,7 +173,7 @@ export default function VideosSection({ videos }: Props) {
                     <div className="flex items-center gap-3 mb-3">
                       <span className={`${getVideoTypeBgColor(videos[0].type)} text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1`}>
                         {getVideoTypeIcon(videos[0].type)}
-                        {videos[0].type.toUpperCase()}
+                        {getVideoTypeLabel(videos[0].type)}
                       </span>
                       <span className="bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm flex items-center gap-1">
                         <Clock className="w-3 h-3" />
@@ -182,7 +193,7 @@ export default function VideosSection({ videos }: Props) {
                       >
                         ▶
                       </motion.span>
-                      <p className="text-white font-semibold text-lg">Click to Watch Full Trailer</p>
+                      <p className="text-white font-semibold text-lg">Click to Watch Full Movie</p>
                     </div>
                   </div>
                 </div>
@@ -240,7 +251,7 @@ export default function VideosSection({ videos }: Props) {
                   <div className="flex items-center gap-2 mb-2">
                     <span className={`${getVideoTypeBgColor(video.type)} text-white px-2 py-0.5 rounded-full text-xs font-semibold flex items-center gap-1`}>
                       {getVideoTypeIcon(video.type)}
-                      {video.type}
+                      {getVideoTypeLabel(video.type)}
                     </span>
                   </div>
                   <h3 className="font-bold text-gray-800 mb-2 line-clamp-2">{video.title}</h3>
@@ -256,30 +267,213 @@ export default function VideosSection({ videos }: Props) {
           ))}
         </div>
 
-        {/* Enhanced YouTube Channel CTA */}
+        {/* More Videos Recommendations */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-12 text-center"
+          className="mt-16"
         >
-          <div className="bg-gradient-to-r from-red-900/50 to-orange-900/50 backdrop-blur-md rounded-2xl p-8 border border-red-500/50">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Watch More on YouTube
-            </h3>
-            <p className="text-gray-200 mb-6 max-w-2xl mx-auto">
-              Subscribe to our official YouTube channel for more exclusive content, interviews, and updates about Mahavatar Narsimha
-            </p>
-            <a
-              href="https://youtube.com/results?search_query=mahavatar+narsimha"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg transition-colors"
-            >
-              <Play className="w-5 h-5" />
-              Visit YouTube Channel
-            </a>
+          <div className="bg-gradient-to-r from-gray-900/90 to-black/90 backdrop-blur-xl rounded-3xl p-8 border border-red-500/30">
+            <div className="flex items-center justify-between mb-8">
+              <div>
+                <h3 className="text-3xl font-bold text-white mb-2">
+                  🎬 More Epic Content
+                </h3>
+                <p className="text-gray-400">
+                  Discover more Mahavatar Narsimha content and related videos
+                </p>
+              </div>
+              <motion.div
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="text-4xl"
+              >
+                ⭐
+              </motion.div>
+            </div>
+
+            {/* Video Recommendations Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+              {/* Recommendation 1 */}
+              <a
+                href="https://youtube.com/results?search_query=mahavatar+narsimha+behind+scenes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-gradient-to-br from-red-900/50 to-orange-900/50 rounded-xl p-4 border border-red-500/20 hover:border-red-500/50 transition-all hover:scale-105"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="bg-red-600/20 p-2 rounded-lg">
+                    <Film className="w-6 h-6 text-red-400" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-white font-semibold mb-1 group-hover:text-red-400 transition-colors">
+                      Behind The Scenes
+                    </h4>
+                    <p className="text-gray-400 text-sm">
+                      Making of Mahavatar • VFX Breakdown
+                    </p>
+                    <div className="flex items-center gap-2 mt-2">
+                      <span className="text-xs text-gray-500">15 videos</span>
+                      <span className="text-xs text-gray-500">•</span>
+                      <span className="text-xs text-gray-500">3.5M views</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              {/* Recommendation 2 */}
+              <a
+                href="https://youtube.com/results?search_query=mahavatar+narsimha+interviews"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-gradient-to-br from-purple-900/50 to-indigo-900/50 rounded-xl p-4 border border-purple-500/20 hover:border-purple-500/50 transition-all hover:scale-105"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="bg-purple-600/20 p-2 rounded-lg">
+                    <Star className="w-6 h-6 text-purple-400" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-white font-semibold mb-1 group-hover:text-purple-400 transition-colors">
+                      Cast Interviews
+                    </h4>
+                    <p className="text-gray-400 text-sm">
+                      Exclusive talks with voice actors
+                    </p>
+                    <div className="flex items-center gap-2 mt-2">
+                      <span className="text-xs text-gray-500">8 videos</span>
+                      <span className="text-xs text-gray-500">•</span>
+                      <span className="text-xs text-gray-500">1.2M views</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              {/* Recommendation 3 */}
+              <a
+                href="https://youtube.com/results?search_query=mahavatar+narsimha+mythology"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-gradient-to-br from-amber-900/50 to-yellow-900/50 rounded-xl p-4 border border-amber-500/20 hover:border-amber-500/50 transition-all hover:scale-105"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="bg-amber-600/20 p-2 rounded-lg">
+                    <Eye className="w-6 h-6 text-amber-400" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-white font-semibold mb-1 group-hover:text-amber-400 transition-colors">
+                      Mythology Explained
+                    </h4>
+                    <p className="text-gray-400 text-sm">
+                      Story of Lord Vishnu's Avatars
+                    </p>
+                    <div className="flex items-center gap-2 mt-2">
+                      <span className="text-xs text-gray-500">12 videos</span>
+                      <span className="text-xs text-gray-500">•</span>
+                      <span className="text-xs text-gray-500">5.8M views</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              {/* Recommendation 4 */}
+              <a
+                href="https://youtube.com/results?search_query=mahavatar+narsimha+reaction"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-gradient-to-br from-green-900/50 to-teal-900/50 rounded-xl p-4 border border-green-500/20 hover:border-green-500/50 transition-all hover:scale-105"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="bg-green-600/20 p-2 rounded-lg">
+                    <TrendingUp className="w-6 h-6 text-green-400" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-white font-semibold mb-1 group-hover:text-green-400 transition-colors">
+                      Fan Reactions
+                    </h4>
+                    <p className="text-gray-400 text-sm">
+                      Global audience reactions
+                    </p>
+                    <div className="flex items-center gap-2 mt-2">
+                      <span className="text-xs text-gray-500">50+ videos</span>
+                      <span className="text-xs text-gray-500">•</span>
+                      <span className="text-xs text-gray-500">10M views</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              {/* Recommendation 5 */}
+              <a
+                href="https://youtube.com/results?search_query=mahavatar+cinematic+universe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-4 border border-blue-500/20 hover:border-blue-500/50 transition-all hover:scale-105"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="bg-blue-600/20 p-2 rounded-lg">
+                    <Film className="w-6 h-6 text-blue-400" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-white font-semibold mb-1 group-hover:text-blue-400 transition-colors">
+                      Mahavatar Universe
+                    </h4>
+                    <p className="text-gray-400 text-sm">
+                      Upcoming films & franchise news
+                    </p>
+                    <div className="flex items-center gap-2 mt-2">
+                      <span className="text-xs text-gray-500">20 videos</span>
+                      <span className="text-xs text-gray-500">•</span>
+                      <span className="text-xs text-gray-500">2.3M views</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              {/* Recommendation 6 */}
+              <a
+                href="https://youtube.com/results?search_query=mahavatar+narsimha+songs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-gradient-to-br from-pink-900/50 to-rose-900/50 rounded-xl p-4 border border-pink-500/20 hover:border-pink-500/50 transition-all hover:scale-105"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="bg-pink-600/20 p-2 rounded-lg">
+                    <Play className="w-6 h-6 text-pink-400" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-white font-semibold mb-1 group-hover:text-pink-400 transition-colors">
+                      Soundtrack & Songs
+                    </h4>
+                    <p className="text-gray-400 text-sm">
+                      Official music & BGM
+                    </p>
+                    <div className="flex items-center gap-2 mt-2">
+                      <span className="text-xs text-gray-500">18 videos</span>
+                      <span className="text-xs text-gray-500">•</span>
+                      <span className="text-xs text-gray-500">8.5M views</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            {/* Subscribe Button */}
+            <div className="flex justify-center">
+              <a
+                href="https://youtube.com/@MahavatarNarsimha"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold px-8 py-4 rounded-full transition-all transform hover:scale-105 shadow-lg hover:shadow-red-500/25"
+              >
+                <Play className="w-6 h-6" />
+                <span>Subscribe to Official Channel</span>
+                <span className="bg-white/20 px-3 py-1 rounded-full text-sm">
+                  2.5M Subscribers
+                </span>
+              </a>
+            </div>
           </div>
         </motion.div>
       </div>
