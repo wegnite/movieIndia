@@ -142,7 +142,7 @@ export default async function HomePage({
             <ReviewsSection reviews={movieData.reviews} />
           </div>
         </section>
-
+        
         {/* FAQ Section for SEO */}
         <section className="py-20 px-4 bg-gradient-to-b from-indigo-50 to-white">
           <div className="max-w-7xl mx-auto">

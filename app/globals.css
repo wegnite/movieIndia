@@ -15,3 +15,74 @@
 .container {
   @apply mx-auto max-w-7xl px-4 md:px-8;
 }
+
+/* Google AdSense Mobile Optimizations */
+@media (max-width: 768px) {
+  /* Ensure ads don't overflow on mobile */
+  .adsbygoogle {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  
+  /* Responsive ad container */
+  .adsense-container {
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Prevent horizontal scroll from ads */
+  .ads-wrapper {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Mobile-specific ad styling */
+  ins.adsbygoogle {
+    display: block !important;
+    width: calc(100vw - 20px) !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .adsense-container {
+    max-width: 728px;
+    margin: 0 auto;
+  }
+}
+
+/* Ensure ads are responsive */
+.responsive-ad-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Loading state for ads */
+.adsbygoogle:empty {
+  min-height: 90px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Dark mode ad background */
+.dark .adsense-container {
+  background-color: rgba(31, 41, 55, 0.5);
+  border-radius: 8px;
+  padding: 10px;
+}
