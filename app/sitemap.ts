@@ -34,12 +34,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/backlink.html`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
+    }
   ]
 }
