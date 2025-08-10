@@ -68,6 +68,9 @@ export default async function RootLayout({
           crossOrigin="anonymous"
         />
         
+        {/* Google AdSense Account Verification */}
+        <meta name="google-adsense-account" content="ca-pub-6224617757558738" />
+        
         {googleAdsenseCode && (
           <meta name="google-adsense-account" content={googleAdsenseCode} />
         )}
