@@ -21,9 +21,9 @@ export async function generateMetadata({
   }
 
   return {
-    title: 'Watch Mahavatar Narsimha (2025) Full Movie Online HD | Official Website',
-    description: '⭐ Watch Mahavatar Narsimha full movie online FREE in HD. IMDb 9.4/10. Official trailers, cast interviews, behind-the-scenes. Now streaming in Hindi, Tamil, Telugu. 🎬 Click to watch!',
-    keywords: 'mahavatar narsimha, mahavatar narsimha full movie, mahavatar narsimha watch online, mahavatar narsimha 2025, mahavatar narsimha streaming, mahavatar narsimha hd, mahavatar narsimha free, mahavatar narsimha imdb, mahavatar narsimha official',
+    title: 'Mahavatar Narsimha Full Movie Watch Online FREE HD (2025) | Official Website',
+    description: '🎬 Watch Mahavatar Narsimha full movie online FREE in HD quality. Stream now or download. IMDb 9.3/10. Available in Hindi, Tamil, Telugu. Official trailers & exclusive content!',
+    keywords: 'mahavatar narsimha full movie, mahavatar narsimha full movie watch online, mahavatar narsimha movie watch online free, mahavatar narsimha watch online, mahavatar narsimha movie watch online, mahavatar narsimha online, mahavatar narasimha full movie, mahavatar narsimha where to watch, mahavatar narsimha free watch online, mahavatar narsimha website',
     icons: {
       icon: '/favicon.ico',
       shortcut: '/favicon.ico',
@@ -90,7 +90,41 @@ export default async function HomePage({
       />
       
       <main className="min-h-screen">
-        {/* Videos Section - MOVED TO TOP for immediate visibility */}
+        {/* Full Movie Section - HIGHEST PRIORITY for 301 searches */}
+        <section id="full-movie" className="py-20 px-4 bg-gradient-to-b from-red-900 to-orange-900">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-5xl font-bold text-white mb-4">
+                Watch Mahavatar Narsimha Full Movie Online
+              </h2>
+              <p className="text-xl text-gray-200 mb-8">
+                Stream Mahavatar Narsimha full movie in HD quality. Available in Hindi, Tamil, Telugu, Kannada, and Malayalam.
+              </p>
+              <div className="bg-black/50 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <a
+                    href="/en/watch/mahavatar-narsimha-full-movie"
+                    className="bg-gradient-to-r from-red-600 to-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-red-700 hover:to-orange-700 transition-all transform hover:scale-105 shadow-xl"
+                  >
+                    🎬 Watch Full Movie HD
+                  </a>
+                  <a
+                    href="/en/watch/mahavatar-narsimha-full-movie-watch-online"
+                    className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105 shadow-xl"
+                  >
+                    📺 Watch Online Free
+                  </a>
+                </div>
+                <div className="mt-6 text-gray-300">
+                  <p className="text-sm mb-2">⭐ IMDb Rating: 9.3/10 | Runtime: 2h 10min</p>
+                  <p className="text-sm">🎭 Available Languages: Hindi, Tamil, Telugu, Kannada, Malayalam</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Videos Section */}
         <section id="videos" className="py-20 px-4 bg-gradient-to-b from-black to-gray-900">
           <div className="max-w-7xl mx-auto">
             <VideosSection videos={movieData.videos} />

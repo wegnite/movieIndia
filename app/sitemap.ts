@@ -34,6 +34,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.6,
+    },
+    // High priority movie pages - targeting high search volume keywords
+    {
+      url: `${baseUrl}/watch/mahavatar-narsimha-full-movie`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/en/watch/mahavatar-narsimha-full-movie`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/watch/mahavatar-narsimha-full-movie-watch-online`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/en/watch/mahavatar-narsimha-full-movie-watch-online`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/watch/where-to-watch`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/en/watch/where-to-watch`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.85,
     }
   ]
 }
