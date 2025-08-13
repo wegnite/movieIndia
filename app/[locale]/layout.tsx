@@ -10,6 +10,7 @@ import { NextAuthSessionProvider } from "@/auth/session";
 import { NextIntlClientProvider } from "next-intl";
 import { ThemeProvider } from "@/providers/theme";
 import { cn } from "@/lib/utils";
+import Analytics from "@/components/analytics";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -60,6 +61,19 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        
+        {/* Google Analytics (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FTZG7W4F15" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-FTZG7W4F15');
+            `,
+          }}
+        />
         
         {/* Google AdSense Script */}
         <script
@@ -120,6 +134,7 @@ export default async function RootLayout({
             <AppContextProvider>
               <ThemeProvider attribute="class" disableTransitionOnChange>
                 {children}
+                <Analytics />
               </ThemeProvider>
             </AppContextProvider>
           </NextAuthSessionProvider>
