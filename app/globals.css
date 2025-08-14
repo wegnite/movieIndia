@@ -18,31 +18,10 @@
 
 /* Google AdSense Mobile Optimizations */
 @media (max-width: 768px) {
-  /* Ensure ads don't overflow on mobile */
+  /* Let AdSense handle its own responsive sizing */
   .adsbygoogle {
-    max-width: 100% !important;
-    overflow: hidden !important;
-  }
-  
-  /* Responsive ad container */
-  .adsense-container {
-    width: 100% !important;
-    max-width: 100vw !important;
-    padding: 0 10px;
-    box-sizing: border-box;
-  }
-  
-  /* Prevent horizontal scroll from ads */
-  .ads-wrapper {
-    overflow-x: hidden;
-    width: 100%;
-  }
-  
-  /* Mobile-specific ad styling */
-  ins.adsbygoogle {
-    display: block !important;
-    width: calc(100vw - 20px) !important;
-    margin: 0 auto !important;
+    overflow: hidden;
+    text-align: center;
   }
 }
 
