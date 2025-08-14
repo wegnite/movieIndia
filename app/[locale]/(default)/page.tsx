@@ -90,6 +90,14 @@ export default async function HomePage({
       />
       
       <main className="min-h-screen">
+        {/* Google AdSense 自动广告 - 顶部 */}
+        <ins className="adsbygoogle"
+             style={{ display: 'block' }}
+             data-ad-client="ca-pub-6224617757558738"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }} />
+
         {/* Full Movie Section - HIGHEST PRIORITY for 301 searches */}
         <section id="full-movie" className="py-20 px-4 bg-gradient-to-b from-red-900 to-orange-900">
           <div className="max-w-7xl mx-auto">
@@ -140,6 +148,18 @@ export default async function HomePage({
             <CastSection cast={movieData.cast} />
           </div>
         </section>
+
+        {/* Google AdSense 自动广告 - 中间位置 */}
+        <div className="py-8 px-4 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <ins className="adsbygoogle"
+                 style={{ display: 'block' }}
+                 data-ad-client="ca-pub-6224617757558738"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }} />
+          </div>
+        </div>
 
         {/* Watch Online Section - targets "mahavatar narsimha ott" & "bookmyshow" */}
         <section id="watch-online" className="py-20 px-4 bg-gradient-to-b from-orange-50 to-white">
@@ -237,6 +257,18 @@ export default async function HomePage({
             </div>
           </div>
         </section>
+
+        {/* Google AdSense 自动广告 - 底部 */}
+        <div className="py-8 px-4 bg-gray-50">
+          <div className="max-w-7xl mx-auto">
+            <ins className="adsbygoogle"
+                 style={{ display: 'block' }}
+                 data-ad-client="ca-pub-6224617757558738"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }} />
+          </div>
+        </div>
       </main>
     </>
   )

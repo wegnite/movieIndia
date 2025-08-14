@@ -55,12 +55,11 @@ export default async function RootLayout({
   const { locale } = await params;
   const messages = await getMessages();
   const webUrl = process.env.NEXT_PUBLIC_WEB_URL || "";
-  const googleAdsenseCode = process.env.NEXT_PUBLIC_GOOGLE_ADCODE || "";
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
         {/* Google Analytics (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-FTZG7W4F15" />
@@ -75,7 +74,7 @@ export default async function RootLayout({
           }}
         />
         
-        {/* Google AdSense Script */}
+        {/* Google AdSense - 自动广告代码 */}
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6224617757558738"
@@ -84,10 +83,6 @@ export default async function RootLayout({
         
         {/* Google AdSense Account Verification */}
         <meta name="google-adsense-account" content="ca-pub-6224617757558738" />
-        
-        {googleAdsenseCode && (
-          <meta name="google-adsense-account" content={googleAdsenseCode} />
-        )}
 
         {/* Primary favicon */}
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
