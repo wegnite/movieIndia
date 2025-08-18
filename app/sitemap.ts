@@ -71,6 +71,55 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'daily',
       priority: 0.85,
+    },
+    // New high-traffic pages based on search data
+    {
+      url: `${baseUrl}/movie/mahavatar-narsimha-full-movie`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/en/movie/mahavatar-narsimha-full-movie`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/watch/mahavatar-narsimha-online`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/en/watch/mahavatar-narsimha-online`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/movie/narasimha-2025`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/en/movie/narasimha-2025`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/watch/narasimha-2025-ott`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/en/watch/narasimha-2025-ott`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.85,
     }
   ]
 }

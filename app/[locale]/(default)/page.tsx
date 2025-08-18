@@ -6,6 +6,7 @@ import NewsSection from '@/components/movie/NewsSection'
 import VideosSection from '@/components/movie/VideosSection'
 import ReviewsSection from '@/components/movie/ReviewsSection'
 import WatchOnlineSection from '@/components/movie/WatchOnlineSection'
+import VideoPlayer from '@/components/movie/VideoPlayer'
 import { movieData } from '@/data/movie-data'
 
 export async function generateMetadata({
@@ -108,19 +109,29 @@ export default async function HomePage({
               <p className="text-xl text-gray-200 mb-8">
                 Stream Mahavatar Narsimha full movie in HD quality. Available in Hindi, Tamil, Telugu, Kannada, and Malayalam.
               </p>
+              
+              {/* Embedded Video Player */}
+              <div className="max-w-5xl mx-auto mb-8">
+                <VideoPlayer 
+                  videoUrl="https://reelreviewhub.com/en/movie/1383072"
+                  title="Mahavatar Narsimha Full Movie HD"
+                  poster="/images/mahavatar-hero.svg"
+                />
+              </div>
+              
               <div className="bg-black/50 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-6">
                   <a
                     href="/en/watch/mahavatar-narsimha-full-movie"
                     className="bg-gradient-to-r from-red-600 to-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-red-700 hover:to-orange-700 transition-all transform hover:scale-105 shadow-xl"
                   >
-                    🎬 Watch Full Movie HD
+                    🎬 More Watch Options
                   </a>
                   <a
                     href="/en/watch/mahavatar-narsimha-full-movie-watch-online"
                     className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105 shadow-xl"
                   >
-                    📺 Watch Online Free
+                    📺 Alternative Players
                   </a>
                 </div>
                 <div className="mt-6 text-gray-300">
