@@ -208,6 +208,37 @@ export default async function HomePage({
           </div>
         </section>
         
+        {/* 联系方式部分 */}
+        <section className="py-16 px-4 bg-gradient-to-b from-gray-900 to-black">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Contact Us
+            </h2>
+            <p className="text-lg text-gray-300 mb-8">
+              Have questions about the movie or need assistance? Get in touch with us!
+            </p>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+              <div className="flex flex-col items-center space-y-4">
+                <div className="flex items-center space-x-3">
+                  <svg className="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span className="text-xl text-white font-medium">Email</span>
+                </div>
+                <a 
+                  href="mailto:310842705@qq.com" 
+                  className="text-2xl text-orange-400 hover:text-orange-300 transition-colors font-semibold"
+                >
+                  310842705@qq.com
+                </a>
+                <p className="text-sm text-gray-400 mt-4">
+                  We typically respond within 24-48 hours
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ Section for SEO */}
         <section className="py-20 px-4 bg-gradient-to-b from-indigo-50 to-white">
           <div className="max-w-7xl mx-auto">

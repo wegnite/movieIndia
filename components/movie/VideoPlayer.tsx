@@ -22,7 +22,7 @@ export default function VideoPlayer({ videoUrl, title = "Mahavatar Narsimha Full
   }, [])
 
   const handlePlayClick = () => {
-    // 在新窗口打开视频链接
+    // Open video link in new window
     window.open(videoUrl, '_blank', 'width=1280,height=720,menubar=no,toolbar=no,location=no,status=no')
   }
 
@@ -33,7 +33,7 @@ export default function VideoPlayer({ videoUrl, title = "Mahavatar Narsimha Full
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative aspect-video bg-gradient-to-br from-purple-900 via-pink-900 to-red-900">
-        {/* 背景海报图片 */}
+        {/* Background poster image */}
         {poster && (
           <img 
             src={poster} 
@@ -42,12 +42,12 @@ export default function VideoPlayer({ videoUrl, title = "Mahavatar Narsimha Full
           />
         )}
         
-        {/* 渐变遮罩 */}
+        {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
         
-        {/* 主要内容 */}
+        {/* Main content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-          {/* 顶部标签 */}
+          {/* Top badges */}
           <div className="absolute top-4 left-4 right-4 flex justify-between items-start">
             <Badge className="bg-red-600 text-white px-3 py-1">
               <Star className="w-4 h-4 mr-1" />
@@ -58,7 +58,7 @@ export default function VideoPlayer({ videoUrl, title = "Mahavatar Narsimha Full
             </Badge>
           </div>
           
-          {/* 中心播放按钮 */}
+          {/* Center play button */}
           <div className="relative">
             <div className={`absolute inset-0 bg-white/20 rounded-full blur-xl ${pulseAnimation ? 'animate-pulse' : ''}`} />
             <Button
@@ -70,16 +70,16 @@ export default function VideoPlayer({ videoUrl, title = "Mahavatar Narsimha Full
             </Button>
           </div>
           
-          {/* 标题和说明 */}
+          {/* Title and description */}
           <h3 className="text-4xl font-bold text-white mt-8 mb-4 text-center drop-shadow-lg">
             {title}
           </h3>
           
           <p className="text-xl text-gray-200 mb-6 text-center max-w-2xl">
-            点击播放按钮在新窗口观看完整电影
+           Click the play button to watch the full movie in a new window.
           </p>
           
-          {/* 电影信息 */}
+          {/* Movie info */}
           <div className="flex flex-wrap gap-4 justify-center mb-6">
             <div className="flex items-center gap-2 text-gray-300">
               <Clock className="w-5 h-5" />
@@ -95,7 +95,7 @@ export default function VideoPlayer({ videoUrl, title = "Mahavatar Narsimha Full
             </div>
           </div>
           
-          {/* 行动按钮 */}
+          {/* Action buttons */}
           <div className="flex gap-4">
             <Button
               onClick={handlePlayClick}
@@ -108,7 +108,7 @@ export default function VideoPlayer({ videoUrl, title = "Mahavatar Narsimha Full
           </div>
         </div>
         
-        {/* 底部渐变信息栏 */}
+        {/* Bottom gradient info bar */}
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
           <div className="flex justify-between items-center">
             <p className="text-sm text-gray-400">
