@@ -1,4 +1,3 @@
-import { Metadata } from 'next'
 import VideoPlayer from '@/components/movie/VideoPlayer'
 import Link from 'next/link'
 
@@ -173,7 +172,7 @@ export default async function WatchOnlinePage({
                   <div className="font-semibold text-sm">Full Movie</div>
                 </Link>
                 
-                <Link href={`/${locale}/watch/mahavatar-narsimha-hd`}
+                <Link href={`/${locale}/watch/mahavatar-narsimha-full-movie-watch-online`}
                       className="bg-gradient-to-r from-red-600/80 to-orange-600/80 text-white p-4 rounded-lg hover:from-red-700 hover:to-orange-700 transition-all text-center">
                   <div className="text-2xl mb-1">📺</div>
                   <div className="font-semibold text-sm">HD Quality</div>

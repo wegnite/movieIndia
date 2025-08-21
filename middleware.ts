@@ -7,6 +7,6 @@ export const config = {
   matcher: [
     "/",
     "/(en|en-US|zh|zh-CN|zh-TW|zh-HK|zh-MO|ja|ko|ru|fr|de|ar|es|it)/:path*",
-    "/((?!privacy-policy|terms-of-service|api/|_next|_vercel|sitemap.xml|robots.txt|site.webmanifest|favicon.ico|.*\\..*).*)",
+    "/((?!privacy-policy|terms-of-service|api/|_next|_vercel|sitemap.xml|robots.txt|site.webmanifest|favicon.ico|reviews|download|bookmyshow|watch-online|ott-release|news|cast|pricing|icon|.*\\..*).*)",
   ],
 };

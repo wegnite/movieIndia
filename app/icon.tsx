@@ -11,7 +11,8 @@ export const size = {
 export const contentType = 'image/png'
 
 // Image generation
-export default function Icon() {
+export default function Icon(request: Request) {
+  // Ignore any query parameters - always return the same icon
   return new ImageResponse(
     (
       <div
