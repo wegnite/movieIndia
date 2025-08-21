@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/auth/config'
+import { auth } from '@/auth'
 
 /**
  * API 认证中间件
@@ -8,8 +7,8 @@ import { authOptions } from '@/auth/config'
  */
 export async function requireAuth(request: NextRequest) {
   try {
-    // 获取当前会话
-    const session = await getServerSession(authOptions)
+    // 获取当前会话 - NextAuth v5 使用 auth() 函数
+    const session = await auth()
     
     if (!session || !session.user) {
       return NextResponse.json(
