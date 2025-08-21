@@ -13,6 +13,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 import { Badge } from "@/components/ui/badge";
 import Fade from "embla-carousel-fade";
@@ -22,10 +23,7 @@ import { Section as SectionType } from "@/types/blocks/section";
 const DURATION = 5000;
 
 export default function Feature2({ section }: { section: SectionType }) {
-  if (section.disabled) {
-    return null;
-  }
-
+  // 将 Hooks 移到条件语句之前，符合 React Hooks 规则
   const [api, setApi] = useState<CarouselApi>();
   const [currentAccordion, setCurrentAccordion] = useState("1");
 
@@ -40,6 +38,10 @@ export default function Feature2({ section }: { section: SectionType }) {
 
     return () => clearInterval(interval);
   }, [api, currentAccordion]);
+
+  if (section.disabled) {
+    return null;
+  }
 
   return (
     <section id={section.name} className="py-32">
@@ -114,9 +116,11 @@ export default function Feature2({ section }: { section: SectionType }) {
                 {section.items?.map((item, i) => (
                   <CarouselItem key={i}>
                     <div>
-                      <img
-                        src={item.image?.src}
-                        alt={item.image?.alt || item.title}
+                      <Image
+                        src={item.image?.src || '/imgs/placeholder.png'}
+                        alt={item.image?.alt || item.title || 'Feature image'}
+                        width={800}
+                        height={600}
                         className="max-h-auto w-full object-cover lg:max-h-none rounded-md"
                       />
                     </div>

@@ -12,6 +12,7 @@ import { findUserByUuid } from "@/models/user";
 import { getTranslations } from "next-intl/server";
 import moment from "moment";
 import { redirect } from "next/navigation";
+import Image from "next/image";
 
 export default async function () {
   const t = await getTranslations();
@@ -91,10 +92,15 @@ export default async function () {
       callback: (item) => (
         <div className="flex items-center gap-2">
           {item?.user?.avatar_url && (
-            <img
-              src={item.user?.avatar_url || ""}
-              className="w-8 h-8 rounded-full"
-            />
+            <div className="relative w-8 h-8 rounded-full overflow-hidden">
+              <Image
+                src={item.user?.avatar_url || "/images/placeholder.jpg"}
+                alt={`${item.user?.nickname || '用户'} 头像`}
+                fill
+                className="object-cover"
+                sizes="32px"
+              />
+            </div>
           )}
           <span>{item.user?.nickname}</span>
         </div>

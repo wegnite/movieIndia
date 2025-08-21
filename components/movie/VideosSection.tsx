@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { Play, Eye, Clock, Film, Star, TrendingUp, X, ExternalLink } from 'lucide-react'
 import { useState } from 'react'
+import Image from 'next/image'
 
 interface Video {
   id: string
@@ -129,12 +130,14 @@ export default function VideosSection({ videos }: Props) {
                 transition={{ duration: 2, repeat: Infinity }}
                 className="absolute inset-0 rounded-2xl"
               />
-              <div className="aspect-video bg-gradient-to-br from-orange-900 to-red-900">
+              <div className="relative aspect-video bg-gradient-to-br from-orange-900 to-red-900">
                 {videos[0].thumbnail ? (
-                  <img 
+                  <Image 
                     src={videos[0].thumbnail} 
-                    alt={videos[0].title} 
-                    className="w-full h-full object-cover"
+                    alt={videos[0].title || '视频缩略图'} 
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center">
@@ -219,10 +222,12 @@ export default function VideosSection({ videos }: Props) {
                 {/* Thumbnail */}
                 <div className="relative aspect-video bg-gradient-to-br from-gray-200 to-gray-300">
                   {video.thumbnail ? (
-                    <img 
+                    <Image 
                       src={video.thumbnail} 
-                      alt={video.title} 
-                      className="w-full h-full object-cover"
+                      alt={video.title || '视频缩略图'} 
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-100 to-red-100">
@@ -366,7 +371,7 @@ export default function VideosSection({ videos }: Props) {
                       Mythology Explained
                     </h4>
                     <p className="text-gray-400 text-sm">
-                      Story of Lord Vishnu's Avatars
+                      Story of Lord Vishnu&apos;s Avatars
                     </p>
                     <div className="flex items-center gap-2 mt-2">
                       <span className="text-xs text-gray-500">12 videos</span>

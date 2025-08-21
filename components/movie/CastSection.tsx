@@ -64,7 +64,13 @@ export default function CastSection({ cast }: CastSectionProps) {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
                   <div className="relative w-full h-full flex items-center justify-center">
                     {member.image ? (
-                      <img src={member.image} alt={member.character} className="w-full h-full object-cover" />
+                      <Image 
+                        src={member.image} 
+                        alt={member.character || '角色图片'} 
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
                     ) : (
                       <div className="w-full h-full bg-gradient-to-br from-amber-200 to-orange-200 flex items-center justify-center">
                         <User className="w-32 h-32 text-amber-600/30" />
@@ -119,9 +125,15 @@ export default function CastSection({ cast }: CastSectionProps) {
                   className="flex items-center gap-4 bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-amber-100"
                 >
                   {/* Avatar */}
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center flex-shrink-0">
+                  <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center flex-shrink-0 overflow-hidden">
                     {member.image ? (
-                      <img src={member.image} alt={member.character} className="w-full h-full rounded-full object-cover" />
+                      <Image 
+                        src={member.image} 
+                        alt={member.character || '角色图片'} 
+                        fill
+                        className="object-cover"
+                        sizes="80px"
+                      />
                     ) : (
                       <User className="w-10 h-10 text-amber-600/50" />
                     )}

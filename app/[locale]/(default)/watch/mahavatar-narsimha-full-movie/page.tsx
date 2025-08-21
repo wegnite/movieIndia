@@ -83,7 +83,7 @@ export default async function MahavatarNarsimhaFullMoviePage({
                 Mahavatar Narsimha Full Movie
               </h1>
               <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Watch the complete Mahavatar Narsimha movie online - India's most spectacular animated mythological epic. 
+                Watch the complete Mahavatar Narsimha movie online - India&apos;s most spectacular animated mythological epic. 
                 Experience the divine story of Lord Narsimha in stunning 3D animation with a runtime of 2 hours and 10 minutes.
               </p>
               
@@ -148,10 +148,10 @@ export default async function MahavatarNarsimhaFullMoviePage({
                     <strong className="text-white">Animation:</strong> State-of-the-art 3D animation brings the mythological tale to life.
                   </p>
                   <p>
-                    <strong className="text-white">Story:</strong> The complete narrative of Lord Narsimha's manifestation to protect his devotee Prahlada.
+                    <strong className="text-white">Story:</strong> The complete narrative of Lord Narsimha&apos;s manifestation to protect his devotee Prahlada.
                   </p>
                   <p>
-                    <strong className="text-white">Box Office:</strong> Crossed ₹91 crores in just 10 days, becoming India's highest-grossing animated film.
+                    <strong className="text-white">Box Office:</strong> Crossed ₹91 crores in just 10 days, becoming India&apos;s highest-grossing animated film.
                   </p>
                 </div>
               </Card>
@@ -261,7 +261,7 @@ export default async function MahavatarNarsimhaFullMoviePage({
                     What makes this full movie special?
                   </h4>
                   <p className="text-gray-300">
-                    This is India's first large-scale 3D animated mythological film with a complete narrative arc, featuring cutting-edge animation and a powerful soundtrack throughout its full duration.
+                    This is India&apos;s first large-scale 3D animated mythological film with a complete narrative arc, featuring cutting-edge animation and a powerful soundtrack throughout its full duration.
                   </p>
                 </div>
               </div>

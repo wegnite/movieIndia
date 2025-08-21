@@ -151,13 +151,13 @@ export default async function Narasimha2025Page({
               <div className="bg-black/50 backdrop-blur-sm rounded-2xl p-6">
                 <h2 className="text-2xl font-bold text-white mb-4">About Narasimha 2025</h2>
                 <p className="text-gray-300 mb-4">
-                  Narasimha 2025, officially titled "Mahavatar Narsimha", is a groundbreaking animated film that brings 
+                  Narasimha 2025, officially titled &quot;Mahavatar Narsimha&quot;, is a groundbreaking animated film that brings 
                   the ancient story of Lord Narasimha to modern audiences. This epic production has been 4.5 years in the making.
                 </p>
                 <ul className="space-y-2 text-gray-300">
                   <li className="flex items-start">
                     <span className="text-orange-400 mr-2">•</span>
-                    India's biggest animated mythological film
+                    India&apos;s biggest animated mythological film
                   </li>
                   <li className="flex items-start">
                     <span className="text-orange-400 mr-2">•</span>
@@ -177,7 +177,7 @@ export default async function Narasimha2025Page({
               <div className="bg-black/50 backdrop-blur-sm rounded-2xl p-6">
                 <h2 className="text-2xl font-bold text-white mb-4">Narsimha vs Narasimha</h2>
                 <p className="text-gray-300 mb-4">
-                  Many people search for both "Narsimha" and "Narasimha" - both refer to the same deity and movie:
+                  Many people search for both &quot;Narsimha&quot; and &quot;Narasimha&quot; - both refer to the same deity and movie:
                 </p>
                 <div className="bg-orange-900/30 rounded-lg p-4 mb-4">
                   <p className="text-white font-semibold mb-2">Common Searches:</p>

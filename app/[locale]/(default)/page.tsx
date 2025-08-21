@@ -8,6 +8,7 @@ import ReviewsSection from '@/components/movie/ReviewsSection'
 import WatchOnlineSection from '@/components/movie/WatchOnlineSection'
 import VideoPlayer from '@/components/movie/VideoPlayer'
 import { movieData } from '@/data/movie-data'
+import Link from 'next/link'
 
 export async function generateMetadata({
   params,
@@ -121,18 +122,18 @@ export default async function HomePage({
               
               <div className="bg-black/50 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-6">
-                  <a
+                  <Link
                     href="/en/watch/mahavatar-narsimha-full-movie"
                     className="bg-gradient-to-r from-red-600 to-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-red-700 hover:to-orange-700 transition-all transform hover:scale-105 shadow-xl"
                   >
                     🎬 More Watch Options
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/en/watch/mahavatar-narsimha-full-movie-watch-online"
                     className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105 shadow-xl"
                   >
                     📺 Alternative Players
-                  </a>
+                  </Link>
                 </div>
                 <div className="mt-6 text-gray-300">
                   <p className="text-sm mb-2">⭐ IMDb Rating: 9.3/10 | Runtime: 2h 10min</p>
@@ -277,7 +278,7 @@ export default async function HomePage({
                   What is the budget of Mahavatar Narsimha?
                 </h3>
                 <p className="text-gray-600">
-                  Made with a budget of ₹100+ crores over 4.5 years, it's one of India's biggest animated productions.
+                  Made with a budget of ₹100+ crores over 4.5 years, it&apos;s one of India&apos;s biggest animated productions.
                 </p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-md border border-indigo-100 hover:shadow-lg transition-shadow">
@@ -285,7 +286,7 @@ export default async function HomePage({
                   Is it part of a franchise?
                 </h3>
                 <p className="text-gray-600">
-                  Yes! It's the first film in the Mahavatar Cinematic Universe, with 6 more films planned through 2037.
+                  Yes! It&apos;s the first film in the Mahavatar Cinematic Universe, with 6 more films planned through 2037.
                 </p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-md border border-indigo-100 hover:shadow-lg transition-shadow">

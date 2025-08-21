@@ -75,7 +75,7 @@ export default async function NarasimhaOTTPage({
                 </span>
               </h1>
               <p className="text-xl text-gray-300 mb-6">
-                Everything you need to know about Mahavatar Narsimha's digital release
+                Everything you need to know about Mahavatar Narsimha&apos;s digital release
               </p>
               
               {/* Quick Info Cards */}
@@ -253,7 +253,7 @@ export default async function NarasimhaOTTPage({
             {/* Pre-OTT Watch Options */}
             <div className="bg-gradient-to-r from-orange-900/50 to-red-900/50 backdrop-blur-sm rounded-2xl p-8 mb-12">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">
-                Can't Wait for OTT? Watch Now!
+                Can&apos;t Wait for OTT? Watch Now!
               </h2>
               
               <div className="grid md:grid-cols-3 gap-4">

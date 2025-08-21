@@ -15,16 +15,18 @@ import { Star } from "lucide-react";
 import { useRef } from "react";
 
 export default function Testimonial({ section }: { section: SectionType }) {
-  if (section.disabled) {
-    return null;
-  }
-
+  // 将 useRef Hook 移到顶层，在任何条件返回之前调用
   const plugin = useRef(
     AutoScroll({
       startDelay: 500,
       speed: 0.7,
     })
   );
+
+  // 条件返回放在所有 Hooks 之后
+  if (section.disabled) {
+    return null;
+  }
 
   return (
     <section id={section.name} className="py-16">

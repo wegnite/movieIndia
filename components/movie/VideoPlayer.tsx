@@ -5,6 +5,7 @@ import { Play, ExternalLink, Star, Clock, Globe } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import Image from 'next/image'
 
 interface VideoPlayerProps {
   videoUrl: string
@@ -35,10 +36,12 @@ export default function VideoPlayer({ videoUrl, title = "Mahavatar Narsimha Full
       <div className="relative aspect-video bg-gradient-to-br from-purple-900 via-pink-900 to-red-900">
         {/* Background poster image */}
         {poster && (
-          <img 
+          <Image 
             src={poster} 
-            alt={title}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${isHovered ? 'opacity-40' : 'opacity-30'}`}
+            alt={title || '电影海报'}
+            fill
+            className={`object-cover transition-opacity duration-300 ${isHovered ? 'opacity-40' : 'opacity-30'}`}
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw"
           />
         )}
         

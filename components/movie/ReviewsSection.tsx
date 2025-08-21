@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Star, Quote } from 'lucide-react'
+import Image from 'next/image'
 
 interface Review {
   id: string
@@ -69,11 +70,15 @@ export default function ReviewsSection({ reviews }: Props) {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   {review.userAvatar && (
-                    <img 
-                      src={review.userAvatar} 
-                      alt={review.userName || review.critic || ''} 
-                      className="w-8 h-8 rounded-full"
-                    />
+                    <div className="relative w-8 h-8 rounded-full overflow-hidden">
+                      <Image 
+                        src={review.userAvatar} 
+                        alt={review.userName || review.critic || '用户头像'} 
+                        fill
+                        className="object-cover"
+                        sizes="32px"
+                      />
+                    </div>
                   )}
                   <div>
                     <p className="font-semibold text-gray-800">{review.userName || review.critic}</p>
