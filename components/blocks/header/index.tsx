@@ -32,6 +32,7 @@ import { Menu } from "lucide-react";
 import SignToggle from "@/components/sign/toggle";
 import ThemeToggle from "@/components/theme/toggle";
 import { cn } from "@/lib/utils";
+import { HeaderCountdownBanner } from "@/components/countdown";
 
 export default function Header({ header }: { header: HeaderType }) {
   if (header.disabled) {
@@ -39,8 +40,15 @@ export default function Header({ header }: { header: HeaderType }) {
   }
 
   return (
-    <section className="py-3">
-      <div className="container">
+    <>
+      {/* Countdown Banner - Above header */}
+      <HeaderCountdownBanner
+        defaultType="flash-sale"
+        showCloseButton={true}
+      />
+      
+      <section className="py-3">
+        <div className="container">
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
             <Link
@@ -315,5 +323,6 @@ export default function Header({ header }: { header: HeaderType }) {
         </div>
       </div>
     </section>
+    </>
   );
 }

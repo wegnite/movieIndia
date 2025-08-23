@@ -7,6 +7,8 @@ import VideosSection from '@/components/movie/VideosSection'
 import ReviewsSection from '@/components/movie/ReviewsSection'
 import WatchOnlineSection from '@/components/movie/WatchOnlineSection'
 import VideoPlayer from '@/components/movie/VideoPlayer'
+import PremiumContentSection from '@/components/movie/PremiumContentSection'
+import QuickPaymentCTA from '@/components/movie/QuickPaymentCTA'
 import { movieData } from '@/data/movie-data'
 import Link from 'next/link'
 
@@ -120,6 +122,11 @@ export default async function HomePage({
                 />
               </div>
               
+              {/* Quick Payment CTA */}
+              <div className="max-w-4xl mx-auto mb-8">
+                <QuickPaymentCTA />
+              </div>
+              
               <div className="bg-black/50 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-6">
                   <Link
@@ -150,6 +157,9 @@ export default async function HomePage({
             <VideosSection videos={movieData.videos} />
           </div>
         </section>
+        
+        {/* Premium Content Section - Payment Intent Testing */}
+        <PremiumContentSection />
         
         {/* Hero Section with main keyword */}
         <HeroSection />

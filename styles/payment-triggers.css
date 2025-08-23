@@ -1,0 +1,222 @@
+/* Payment Triggers Custom Styles */
+
+/* Floating Action Button Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOutBottom {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+/* Utility Animation Classes */
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.3s ease-out;
+}
+
+.animate-pulse-ring {
+  animation: pulseRing 2s infinite;
+}
+
+.animate-slide-in-bottom {
+  animation: slideInBottom 0.4s ease-out;
+}
+
+.animate-slide-out-bottom {
+  animation: slideOutBottom 0.3s ease-in;
+}
+
+.animate-bounce-subtle {
+  animation: bounce 2s infinite;
+}
+
+/* Shimmer effect for buttons */
+.shimmer-button {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  background-size: 200px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Gradient animations */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+/* Progress bar animations */
+@keyframes progressFill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--progress-value);
+  }
+}
+
+.animate-progress-fill {
+  animation: progressFill 0.5s ease-out;
+}
+
+/* Responsive visibility helpers */
+@media (max-width: 768px) {
+  .payment-trigger-mobile-adjust {
+    padding: 1rem 0.5rem;
+  }
+  
+  .payment-trigger-text-mobile {
+    font-size: 0.875rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .payment-trigger-card {
+    border-width: 2px;
+    border-color: currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .animate-slide-up,
+  .animate-scale-up,
+  .animate-pulse-ring,
+  .animate-slide-in-bottom,
+  .animate-slide-out-bottom,
+  .animate-bounce-subtle,
+  .shimmer-button,
+  .animate-gradient,
+  .animate-progress-fill {
+    animation: none;
+  }
+  
+  .payment-trigger-transition {
+    transition: none;
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .payment-trigger-bg-light {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .payment-trigger-text-light {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* Focus states for accessibility */
+.payment-trigger-button:focus-visible {
+  outline: 2px solid #f97316;
+  outline-offset: 2px;
+}
+
+/* Loading states */
+.payment-trigger-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.payment-trigger-loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: shimmer 1.5s infinite;
+}

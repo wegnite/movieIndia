@@ -1,0 +1,8 @@
+# Ignore all payment intent data files for privacy
+*.json
+*.tmp
+.locks/
+
+# Keep directory structure
+!.gitkeep
+!README.md

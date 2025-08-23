@@ -12,6 +12,7 @@ import { Label } from "@/components/ui/label";
 import { loadStripe } from "@stripe/stripe-js";
 import { toast } from "sonner";
 import { useAppContext } from "@/contexts/app";
+import { PricingUrgencyTimer } from "@/components/countdown";
 
 export default function Pricing({ pricing }: { pricing: PricingType }) {
   // 将所有 Hooks 移到顶层，在任何条件返回之前调用
@@ -110,6 +111,22 @@ export default function Pricing({ pricing }: { pricing: PricingType }) {
           <p className="text-muted-foreground lg:text-lg">
             {pricing.description}
           </p>
+        </div>
+
+        {/* Countdown Timer Section */}
+        <div className="mb-12">
+          <PricingUrgencyTimer
+            timerType="flash-sale"
+            originalPrice={299}
+            currentPrice={99}
+            currency="₹"
+            nextPriceIncrease={199}
+            showStockCounter={true}
+            showViewersCount={true}
+            showLastPurchased={true}
+            stockRemaining={27}
+            totalStock={100}
+          />
         </div>
         <div className="w-full flex flex-col items-center gap-2">
           {pricing.groups && pricing.groups.length > 0 && (

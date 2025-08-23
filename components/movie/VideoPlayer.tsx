@@ -6,6 +6,7 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import Image from 'next/image'
+import { VideoPlayerOverlay } from '@/components/countdown'
 
 interface VideoPlayerProps {
   videoUrl: string
@@ -16,15 +17,39 @@ interface VideoPlayerProps {
 export default function VideoPlayer({ videoUrl, title = "Mahavatar Narsimha Full Movie", poster }: VideoPlayerProps) {
   const [isHovered, setIsHovered] = useState(false)
   const [pulseAnimation, setPulseAnimation] = useState(true)
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+  const [showOverlay, setShowOverlay] = useState(false)
 
   useEffect(() => {
     const timer = setTimeout(() => setPulseAnimation(false), 5000)
     return () => clearTimeout(timer)
   }, [])
 
+  // Show overlay after 10 seconds of "playing"
+  useEffect(() => {
+    if (isVideoPlaying) {
+      const timer = setTimeout(() => setShowOverlay(true), 10000)
+      return () => clearTimeout(timer)
+    }
+  }, [isVideoPlaying])
+
   const handlePlayClick = () => {
-    // Open video link in new window
-    window.open(videoUrl, '_blank', 'width=1280,height=720,menubar=no,toolbar=no,location=no,status=no')
+    setIsVideoPlaying(true)
+    // Simulate starting video playback
+    setTimeout(() => {
+      // Open video link in new window
+      window.open(videoUrl, '_blank', 'width=1280,height=720,menubar=no,toolbar=no,location=no,status=no')
+    }, 1000)
+  }
+
+  const handleSubscribeClick = () => {
+    // Redirect to pricing or subscription page
+    window.location.href = '/pricing'
+  }
+
+  const handleResumeVideo = () => {
+    setShowOverlay(false)
+    // Continue with video playback
   }
 
   return (
@@ -131,6 +156,16 @@ export default function VideoPlayer({ videoUrl, title = "Mahavatar Narsimha Full
           </div>
         </div>
       </div>
+
+      {/* Video Player Countdown Overlay */}
+      <VideoPlayerOverlay
+        isVideoPlaying={isVideoPlaying}
+        onResumeVideo={handleResumeVideo}
+        onSubscribeClick={handleSubscribeClick}
+        showOnPlay={true}
+        timerType="flash-sale"
+        overlayDelay={10} // Show after 10 seconds of playback
+      />
     </Card>
   )
 }

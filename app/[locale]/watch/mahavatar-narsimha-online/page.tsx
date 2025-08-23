@@ -1,5 +1,6 @@
 import VideoPlayer from '@/components/movie/VideoPlayer'
 import Link from 'next/link'
+import { PaymentTriggersManager, ContentSectionCTA } from '@/components/payment-triggers'
 
 export async function generateMetadata({
   params,
@@ -59,6 +60,17 @@ export default async function WatchOnlinePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      
+      {/* Payment Triggers Manager */}
+      <PaymentTriggersManager
+        showFloatingButton={true}
+        showExitIntent={true}
+        showVideoPauseOverlay={false} // No video pause overlay for external links
+        showStickyBanner={true}
+        showTimedPopup={true}
+        showContentCTAs={true}
+        page="watch"
       />
       
       <main className="min-h-screen bg-gradient-to-b from-purple-950 via-black to-red-950">
@@ -143,6 +155,9 @@ export default async function WatchOnlinePage({
               </div>
             </div>
 
+            {/* Content CTA after main players */}
+            <ContentSectionCTA variant="after-videos" />
+
             {/* Google AdSense */}
             <div className="mb-8">
               <ins className="adsbygoogle"
@@ -212,6 +227,9 @@ export default async function WatchOnlinePage({
                 </p>
               </div>
             </div>
+
+            {/* Content CTA mid-page */}
+            <ContentSectionCTA variant="mid-content" />
 
             {/* Language Selection */}
             <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 backdrop-blur-sm rounded-2xl p-8 mb-12">

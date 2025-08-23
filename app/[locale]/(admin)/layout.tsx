@@ -52,6 +52,11 @@ export default async function AdminLayout({
           url: "/admin/orders",
         },
         {
+          title: "Payment Intents",
+          icon: "RiBarChartLine",
+          url: "/admin/payment-intents",
+        },
+        {
           title: "Posts",
           url: "/admin/posts",
           icon: "RiArticleLine",
@@ -60,6 +65,11 @@ export default async function AdminLayout({
           title: "Feedbacks",
           url: "/admin/feedbacks",
           icon: "RiMessage2Line",
+        },
+        {
+          title: "Email Test",
+          url: "/admin/email-test",
+          icon: "RiMailLine",
         },
       ],
     },

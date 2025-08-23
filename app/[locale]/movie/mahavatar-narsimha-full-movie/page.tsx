@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import VideoPlayer from '@/components/movie/VideoPlayer'
 import Link from 'next/link'
+import { PaymentTriggersManager } from '@/components/payment-triggers'
 
 export async function generateMetadata({
   params,

@@ -20,6 +20,7 @@ export async function POST(req: Request) {
       product_name,
       valid_months,
       cancel_url,
+      ab_test_context,
     } = await req.json();
 
     if (!cancel_url) {
@@ -124,6 +125,27 @@ export async function POST(req: Request) {
     };
     await insertOrder(order);
 
+    // Track A/B test purchase event if context is provided
+    if (ab_test_context?.assignment_id) {
+      try {
+        const { trackABTestEvent } = await import("@/services/ab-test");
+        await trackABTestEvent(
+          ab_test_context.assignment_id,
+          "purchase",
+          {
+            product_id,
+            product_name,
+            order_no: order_no.toString(),
+            currency,
+          },
+          amount / 100 // Convert cents to currency units
+        );
+      } catch (error) {
+        console.error("Failed to track A/B test purchase event:", error);
+        // Don't fail the checkout if A/B test tracking fails
+      }
+    }
+
     const stripe = new Stripe(process.env.STRIPE_PRIVATE_KEY || "");
 
     let options: Stripe.Checkout.SessionCreateParams = {
@@ -153,6 +175,12 @@ export async function POST(req: Request) {
         user_email: user_email,
         credits: credits,
         user_uuid: user_uuid,
+        // Include A/B test context in metadata for tracking
+        ...(ab_test_context && {
+          ab_experiment_id: ab_test_context.experiment_id?.toString(),
+          ab_variant_id: ab_test_context.variant_id?.toString(),
+          ab_assignment_id: ab_test_context.assignment_id?.toString(),
+        }),
       },
       mode: is_subscription ? "subscription" : "payment",
       success_url: `${process.env.NEXT_PUBLIC_WEB_URL}/pay-success/{CHECKOUT_SESSION_ID}`,
