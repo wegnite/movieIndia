@@ -4,6 +4,9 @@ import { getUsersByUuids } from "./user";
 
 export async function insertFeedback(feedback: Feedback) {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    throw new Error("Database not configured");
+  }
   const { data, error } = await supabase.from("feedbacks").insert(feedback);
 
   if (error) {
@@ -17,6 +20,9 @@ export async function findFeedbackByUuid(
   uuid: string
 ): Promise<Feedback | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   const { data, error } = await supabase
     .from("feedbacks")
     .select("*")
@@ -39,6 +45,9 @@ export async function getFeedbacks(
 
   const offset = (page - 1) * limit;
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return [];
+  }
 
   const { data, error } = await supabase
     .from("feedbacks")
@@ -67,6 +76,9 @@ export async function getFeedbacks(
 
 export async function getFeedbacksTotal(): Promise<number | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   const { data, error } = await supabase.from("feedbacks").select("count", {
     count: "exact",
   });

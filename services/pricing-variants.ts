@@ -85,7 +85,7 @@ export function generatePricingFromVariant(
               config.type === "time_limited" ?
               [...baseFeatures.standard, "Flash Sale Pricing!", `Save ₹${config.standard_original - config.standard_price}`] :
               baseFeatures.standard,
-    interval: "per-ticket",
+    interval: "one-time" as const,
     amount: config.standard_price * 100, // Convert to cents
     cn_amount: config.standard_price * 53, // Rough INR to CNY conversion
     currency: "INR",
@@ -128,7 +128,7 @@ export function generatePricingFromVariant(
               config.type === "time_limited" ?
               [...baseFeatures.premium, "Limited Time Only!", `Save ₹${config.premium_original - config.premium_price}`] :
               baseFeatures.premium,
-    interval: "per-ticket",
+    interval: "one-time" as const,
     amount: config.premium_price * 100,
     cn_amount: config.premium_price * 53,
     currency: "INR",
@@ -168,7 +168,7 @@ export function generatePricingFromVariant(
               config.type === "time_limited" ?
               [...baseFeatures.imax, "Flash Sale Special!", `Huge ₹${config.imax_original - config.imax_price} savings`] :
               baseFeatures.imax,
-    interval: "per-ticket",
+    interval: "one-time" as const,
     amount: config.imax_price * 100,
     cn_amount: config.imax_price * 53,
     currency: "INR",

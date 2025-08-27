@@ -9,6 +9,9 @@ export enum OrderStatus {
 
 export async function insertOrder(order: Order) {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    throw new Error("Database not configured");
+  }
   const { data, error } = await supabase.from("orders").insert(order);
 
   if (error) {
@@ -22,6 +25,9 @@ export async function findOrderByOrderNo(
   order_no: string
 ): Promise<Order | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   const { data, error } = await supabase
     .from("orders")
     .select("*")
@@ -39,6 +45,9 @@ export async function getFirstPaidOrderByUserUuid(
   user_uuid: string
 ): Promise<Order | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   const { data, error } = await supabase
     .from("orders")
     .select("*")
@@ -59,6 +68,9 @@ export async function getFirstPaidOrderByUserEmail(
   user_email: string
 ): Promise<Order | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   const { data, error } = await supabase
     .from("orders")
     .select("*")
@@ -83,6 +95,9 @@ export async function updateOrderStatus(
   paid_detail: string
 ) {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    throw new Error("Database not configured");
+  }
   const { data, error } = await supabase
     .from("orders")
     .update({ status, paid_at, paid_detail, paid_email })
@@ -101,6 +116,9 @@ export async function updateOrderSession(
   order_detail: string
 ) {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    throw new Error("Database not configured");
+  }
   const { data, error } = await supabase
     .from("orders")
     .update({ stripe_session_id, order_detail })
@@ -127,6 +145,9 @@ export async function updateOrderSubscription(
   paid_detail: string
 ) {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    throw new Error("Database not configured");
+  }
   const { data, error } = await supabase
     .from("orders")
     .update({
@@ -155,6 +176,9 @@ export async function getOrdersByUserUuid(
 ): Promise<Order[] | undefined> {
   const now = new Date().toISOString();
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return [];
+  }
   const { data, error } = await supabase
     .from("orders")
     .select("*")
@@ -175,6 +199,9 @@ export async function getOrdersByUserEmail(
 ): Promise<Order[] | undefined> {
   const now = new Date().toISOString();
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return [];
+  }
   const { data, error } = await supabase
     .from("orders")
     .select("*")
@@ -195,6 +222,9 @@ export async function getOrdersByPaidEmail(
 ): Promise<Order[] | undefined> {
   const now = new Date().toISOString();
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return [];
+  }
   const { data, error } = await supabase
     .from("orders")
     .select("*")
@@ -215,6 +245,9 @@ export async function getPaiedOrders(
   limit: number
 ): Promise<Order[] | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return [];
+  }
   const { data, error } = await supabase
     .from("orders")
     .select("*")
@@ -231,6 +264,9 @@ export async function getPaiedOrders(
 
 export async function getPaidOrdersTotal(): Promise<number | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   const { data, error } = await supabase
     .from("orders")
     .select("count", { count: "exact" })
@@ -248,6 +284,9 @@ export async function getOrderCountByDate(
   status?: string
 ): Promise<Map<string, number> | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   let query = supabase
     .from("orders")
     .select("created_at")

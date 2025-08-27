@@ -122,10 +122,30 @@ export function getClientSessionId(): string {
 }
 
 /**
+ * Hash string using Web Crypto API (Edge Runtime compatible)
+ */
+async function hashString(str: string): Promise<string> {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(str);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+/**
  * Hash IP address for privacy-preserving consistency
  */
 export function hashIP(ip: string): string {
-  return crypto.createHash("sha256").update(ip + process.env.AB_TEST_SALT || "default_salt").digest("hex");
+  // For Edge Runtime, use a simpler hash that doesn't require async
+  // This is a simple hash function that's good enough for distribution
+  const str = ip + (process.env.AB_TEST_SALT || "default_salt");
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash; // Convert to 32bit integer
+  }
+  return Math.abs(hash).toString(16);
 }
 
 /**
@@ -136,7 +156,15 @@ export function hashUserAgent(userAgent: string): string {
   const keyParts = userAgent.match(/(Chrome|Firefox|Safari|Edge)\/[\d.]+|Mobile|Windows|Mac|Linux/g) || [];
   const normalizedUA = keyParts.join("|");
   
-  return crypto.createHash("sha256").update(normalizedUA + process.env.AB_TEST_SALT || "default_salt").digest("hex");
+  // Simple hash for Edge Runtime
+  const str = normalizedUA + (process.env.AB_TEST_SALT || "default_salt");
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash;
+  }
+  return Math.abs(hash).toString(16);
 }
 
 /**
@@ -151,8 +179,7 @@ export interface UserContext {
 
 export function extractUserContext(request: NextRequest, userId?: number): UserContext {
   const sessionId = getABTestSessionId(request);
-  const ip = request.ip || 
-    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || 
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || 
     request.headers.get("x-real-ip") || 
     "unknown";
   const userAgent = request.headers.get("user-agent") || "unknown";

@@ -3,8 +3,7 @@ import ABTestPricing from "@/components/blocks/ab-test-pricing";
 import { getPricingPage } from "@/services/page";
 import { isABTestingEnabled, getFeatureFlag } from "@/services/ab-test";
 import { getSessionIdFromHeaders } from "@/lib/ab-test-middleware";
-import { getServerSession } from "next-auth";
-import { authConfig } from "@/auth/config";
+import { auth } from "@/auth";
 import { headers } from "next/headers";
 import { Metadata } from "next";
 
@@ -38,7 +37,7 @@ export default async function PricingPage({
   const page = await getPricingPage(locale);
   
   // Get session info for A/B testing
-  const session = await getServerSession(authConfig);
+  const session = await auth();
   const headersList = await headers();
   const sessionId = getSessionIdFromHeaders(headersList);
   

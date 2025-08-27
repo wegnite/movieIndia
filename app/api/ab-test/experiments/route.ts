@@ -8,15 +8,14 @@ import {
 } from "@/services/ab-test";
 import { getActiveExperiments, getExperiment } from "@/models/ab-test";
 import { respData, respErr } from "@/lib/resp";
-import { getServerSession } from "next-auth";
-import { authConfig } from "@/auth/config";
+import { auth } from "@/auth";
 
 // Get all experiments or specific experiment results
 export async function GET(request: NextRequest) {
   try {
-    const session = await getServerSession(authConfig);
+    const session = await auth();
     if (!session?.user) {
-      return respErr("Unauthorized", 401);
+      return respErr("Unauthorized");
     }
 
     // Check if user is admin (you may want to add admin role check)
@@ -41,9 +40,9 @@ export async function GET(request: NextRequest) {
 // Create new experiment
 export async function POST(request: NextRequest) {
   try {
-    const session = await getServerSession(authConfig);
+    const session = await auth();
     if (!session?.user) {
-      return respErr("Unauthorized", 401);
+      return respErr("Unauthorized");
     }
 
     const body = await request.json();
@@ -85,9 +84,9 @@ export async function POST(request: NextRequest) {
 // Update experiment status
 export async function PATCH(request: NextRequest) {
   try {
-    const session = await getServerSession(authConfig);
+    const session = await auth();
     if (!session?.user) {
-      return respErr("Unauthorized", 401);
+      return respErr("Unauthorized");
     }
 
     const body = await request.json();

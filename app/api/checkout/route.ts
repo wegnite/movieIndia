@@ -131,7 +131,7 @@ export async function POST(req: Request) {
         const { trackABTestEvent } = await import("@/services/ab-test");
         await trackABTestEvent(
           ab_test_context.assignment_id,
-          "purchase",
+          "conversion",
           {
             product_id,
             product_name,

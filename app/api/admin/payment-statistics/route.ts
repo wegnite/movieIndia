@@ -10,6 +10,26 @@ export async function GET(req: Request) {
     const granularity = url.searchParams.get('granularity') || 'daily';
     
     const supabase = getSupabaseClient();
+    
+    if (!supabase) {
+      // Return mock statistics when database is not configured
+      return respData({
+        overview: {
+          totalIntents: 0,
+          totalPaid: 0,
+          conversionRate: 0,
+          totalRevenue: 0,
+          revenuePerIntent: 0,
+          averageTimeToConversion: 0
+        },
+        planDistribution: {},
+        currencyBreakdown: {},
+        timeSeriesData: [],
+        hourlyActivity: Array.from({ length: 24 }, (_, hour) => ({ hour, count: 0 })),
+        userJourneyData: { paths: [], conversionFunnel: [] },
+        topProductsByRevenue: []
+      });
+    }
 
     // Get all payment intents (orders with session IDs)
     const { data: allOrders, error: allOrdersError } = await supabase
@@ -177,6 +197,9 @@ function generateHourlyActivity(orders: any[]) {
 }
 
 async function generateUserJourneyData(supabase: any, startDate: string, endDate: string) {
+  if (!supabase) {
+    return { paths: [], conversionFunnel: [] };
+  }
   // Simplified user journey - track session paths from creation to conversion
   const { data: sessions, error } = await supabase
     .from('orders')

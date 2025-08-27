@@ -8,6 +8,9 @@ export enum ApikeyStatus {
 
 export async function insertApikey(apikey: Apikey) {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    throw new Error("Database not configured");
+  }
   const { data, error } = await supabase.from("apikeys").insert(apikey);
 
   if (error) throw error;
@@ -23,6 +26,9 @@ export async function getUserApikeys(
   const offset = (page - 1) * limit;
 
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return [];
+  }
   const { data, error } = await supabase
     .from("apikeys")
     .select("*")
@@ -42,6 +48,9 @@ export async function getUserUuidByApiKey(
   apiKey: string
 ): Promise<string | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   const { data, error } = await supabase
     .from("apikeys")
     .select("user_uuid")

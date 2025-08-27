@@ -13,6 +13,11 @@ export async function GET(req: Request) {
     
     const supabase = getSupabaseClient();
     
+    if (!supabase) {
+      // Return mock data when database is not configured
+      return respData([]);
+    }
+    
     let query = supabase
       .from('orders')
       .select('*')

@@ -53,12 +53,7 @@ export async function POST(request: NextRequest) {
       try {
         const { PaymentIntentStorage } = await import('@/lib/payment-intent-storage');
         const storage = new PaymentIntentStorage();
-        const record = await storage.save({
-          ...intentData,
-          id: crypto.randomUUID(),
-          createdAt: new Date().toISOString()
-        });
-        savedId = record.id;
+        savedId = await storage.savePaymentIntent(intentData);
         persisted = true;
         console.log('✅ Saved to local file system:', savedId);
       } catch (error) {
@@ -108,9 +103,8 @@ export async function GET(request: NextRequest) {
       const stats = await getPaymentIntentStats();
       return respData(stats);
     } else {
-      const { PaymentIntentAnalytics } = await import('@/lib/payment-intent-analytics');
-      const analytics = new PaymentIntentAnalytics();
-      const stats = await analytics.getQuickStats();
+      const { paymentIntentStorage } = await import('@/lib/payment-intent-storage');
+      const stats = await paymentIntentStorage.generateStatistics();
       return respData(stats);
     }
   } catch (error) {

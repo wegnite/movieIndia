@@ -212,7 +212,7 @@ export default function CountdownTimer({
             <div className="flex space-x-1">
               {timeLeft.days > 0 && (
                 <motion.span 
-                  key={timeLeft.days}
+                  key="days"
                   variants={timeUnitVariants}
                   animate="animate"
                   className={cn(currentSize.timer, theme.accent, 'px-2 py-1 rounded')}
@@ -221,7 +221,7 @@ export default function CountdownTimer({
                 </motion.span>
               )}
               <motion.span 
-                key={timeLeft.hours}
+                key="hours"
                 variants={timeUnitVariants}
                 animate="animate"
                 className={cn(currentSize.timer, theme.accent, 'px-2 py-1 rounded')}
@@ -229,7 +229,7 @@ export default function CountdownTimer({
                 {formatTimeUnit(timeLeft.hours)}h
               </motion.span>
               <motion.span 
-                key={timeLeft.minutes}
+                key="minutes"
                 variants={timeUnitVariants}
                 animate="animate"
                 className={cn(currentSize.timer, theme.accent, 'px-2 py-1 rounded')}
@@ -237,7 +237,7 @@ export default function CountdownTimer({
                 {formatTimeUnit(timeLeft.minutes)}m
               </motion.span>
               <motion.span 
-                key={timeLeft.seconds}
+                key="seconds"
                 variants={timeUnitVariants}
                 animate="animate"
                 className={cn(currentSize.timer, theme.accent, 'px-2 py-1 rounded')}

@@ -4,6 +4,9 @@ import { getSupabaseClient } from "./db";
 
 export async function insertUser(user: User) {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    throw new Error("Database not configured");
+  }
   const { data, error } = await supabase.from("users").insert(user);
 
   if (error) {
@@ -17,6 +20,9 @@ export async function findUserByEmail(
   email: string
 ): Promise<User | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   const { data, error } = await supabase
     .from("users")
     .select("*")
@@ -33,6 +39,9 @@ export async function findUserByEmail(
 
 export async function findUserByUuid(uuid: string): Promise<User | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   const { data, error } = await supabase
     .from("users")
     .select("*")
@@ -55,6 +64,9 @@ export async function getUsers(
 
   const offset = (page - 1) * limit;
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return [];
+  }
 
   const { data, error } = await supabase
     .from("users")
@@ -74,6 +86,9 @@ export async function updateUserInviteCode(
   invite_code: string
 ) {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    throw new Error("Database not configured");
+  }
   const updated_at = getIsoTimestr();
   const { data, error } = await supabase
     .from("users")
@@ -92,6 +107,9 @@ export async function updateUserInvitedBy(
   invited_by: string
 ) {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    throw new Error("Database not configured");
+  }
   const updated_at = getIsoTimestr();
   const { data, error } = await supabase
     .from("users")
@@ -107,6 +125,9 @@ export async function updateUserInvitedBy(
 
 export async function getUsersByUuids(user_uuids: string[]): Promise<User[]> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return [];
+  }
   const { data, error } = await supabase
     .from("users")
     .select("*")
@@ -120,6 +141,9 @@ export async function getUsersByUuids(user_uuids: string[]): Promise<User[]> {
 
 export async function findUserByInviteCode(invite_code: string) {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   const { data, error } = await supabase
     .from("users")
     .select("*")
@@ -135,6 +159,9 @@ export async function findUserByInviteCode(invite_code: string) {
 
 export async function getUserUuidsByEmail(email: string) {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return [];
+  }
   const { data, error } = await supabase
     .from("users")
     .select("uuid")
@@ -148,6 +175,9 @@ export async function getUserUuidsByEmail(email: string) {
 
 export async function getUsersTotal(): Promise<number | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   const { data, error } = await supabase.from("users").select("count", {
     count: "exact",
   });
@@ -163,6 +193,9 @@ export async function getUserCountByDate(
   startTime: string
 ): Promise<Map<string, number> | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   let query = supabase
     .from("users")
     .select("created_at")

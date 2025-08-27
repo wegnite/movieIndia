@@ -10,6 +10,9 @@ export enum PostStatus {
 
 export async function insertPost(post: Post) {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    throw new Error("Database not configured");
+  }
   const { data, error } = await supabase.from("posts").insert(post);
 
   if (error) {
@@ -21,6 +24,9 @@ export async function insertPost(post: Post) {
 
 export async function updatePost(uuid: string, post: Partial<Post>) {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    throw new Error("Database not configured");
+  }
   const { data, error } = await supabase
     .from("posts")
     .update(post)
@@ -35,6 +41,9 @@ export async function updatePost(uuid: string, post: Partial<Post>) {
 
 export async function findPostByUuid(uuid: string): Promise<Post | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   const { data, error } = await supabase
     .from("posts")
     .select("*")
@@ -54,6 +63,9 @@ export async function findPostBySlug(
   locale: string
 ): Promise<Post | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   const { data, error } = await supabase
     .from("posts")
     .select("*")
@@ -74,6 +86,9 @@ export async function getAllPosts(
   limit: number = 50
 ): Promise<Post[]> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return [];
+  }
   const { data, error } = await supabase
     .from("posts")
     .select("*")
@@ -93,6 +108,9 @@ export async function getPostsByLocale(
   limit: number = 50
 ): Promise<Post[]> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return [];
+  }
   const { data, error } = await supabase
     .from("posts")
     .select("*")
@@ -110,6 +128,9 @@ export async function getPostsByLocale(
 
 export async function getPostsTotal(): Promise<number | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   const { data, error } = await supabase.from("posts").select("count", {
     count: "exact",
   });

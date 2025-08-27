@@ -5,6 +5,9 @@ import { getUsersByUuids } from "./user";
 
 export async function insertAffiliate(affiliate: Affiliate) {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    throw new Error("Database not configured");
+  }
   const { data, error } = await supabase.from("affiliates").insert({
     user_uuid: affiliate.user_uuid,
     invited_by: affiliate.invited_by,
@@ -29,6 +32,9 @@ export async function getUserAffiliates(
   limit: number = 50
 ): Promise<Affiliate[] | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return [];
+  }
   const { data, error } = await supabase
     .from("affiliates")
     .select("*")
@@ -58,6 +64,13 @@ export async function getUserAffiliates(
 
 export async function getAffiliateSummary(user_uuid: string) {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return {
+      total_invited: 0,
+      total_paid: 0,
+      total_reward: 0,
+    };
+  }
   const { data, error } = await supabase
     .from("affiliates")
     .select("*")
@@ -93,6 +106,9 @@ export async function getAffiliateSummary(user_uuid: string) {
 
 export async function findAffiliateByOrderNo(order_no: string) {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   const { data, error } = await supabase
     .from("affiliates")
     .select("*")
@@ -116,6 +132,9 @@ export async function getAllAffiliates(
   const offset = (page - 1) * limit;
 
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return [];
+  }
   const { data, error } = await supabase
     .from("affiliates")
     .select("*")

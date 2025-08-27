@@ -9,10 +9,15 @@ export function getSupabaseClient() {
   }
 
   if (!supabaseUrl || !supabaseKey) {
-    throw new Error("Supabase URL or key is not set");
+    // Return a mock client if not configured
+    console.warn("Supabase not configured, using mock database");
+    return null;
   }
 
   const client = createClient(supabaseUrl, supabaseKey);
 
   return client;
 }
+
+// Export db as an alias for getSupabaseClient
+export const db = getSupabaseClient;

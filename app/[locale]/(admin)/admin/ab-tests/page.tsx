@@ -1,6 +1,5 @@
 import { Metadata } from "next";
-import { getServerSession } from "next-auth";
-import { authConfig } from "@/auth/config";
+import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import ABTestDashboard from "@/components/admin/ab-test-dashboard";
 
@@ -15,7 +14,7 @@ export default async function ABTestPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const session = await getServerSession(authConfig);
+  const session = await auth();
 
   if (!session?.user) {
     redirect(`/${locale}/auth/signin`);

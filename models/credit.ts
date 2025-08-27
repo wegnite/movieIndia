@@ -3,6 +3,9 @@ import { getSupabaseClient } from "@/models/db";
 
 export async function insertCredit(credit: Credit) {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    throw new Error("Database not configured");
+  }
   const { data, error } = await supabase.from("credits").insert(credit);
 
   if (error) {
@@ -16,6 +19,9 @@ export async function findCreditByTransNo(
   trans_no: string
 ): Promise<Credit | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   const { data, error } = await supabase
     .from("credits")
     .select("*")
@@ -34,6 +40,9 @@ export async function findCreditByOrderNo(
   order_no: string
 ): Promise<Credit | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return undefined;
+  }
   const { data, error } = await supabase
     .from("credits")
     .select("*")
@@ -53,6 +62,9 @@ export async function getUserValidCredits(
 ): Promise<Credit[] | undefined> {
   const now = new Date().toISOString();
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return [];
+  }
   const { data, error } = await supabase
     .from("credits")
     .select("*")
@@ -73,6 +85,9 @@ export async function getCreditsByUserUuid(
   limit: number = 50
 ): Promise<Credit[] | undefined> {
   const supabase = getSupabaseClient();
+  if (!supabase) {
+    return [];
+  }
   const { data, error } = await supabase
     .from("credits")
     .select("*")
