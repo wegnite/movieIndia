@@ -26,7 +26,7 @@ export default function TestEmailConfig() {
       const data = await response.json();
       setResult(data);
     } catch (error) {
-      setResult({ error: error.message });
+      setResult({ error: error instanceof Error ? error.message : String(error) });
     } finally {
       setTesting(false);
     }

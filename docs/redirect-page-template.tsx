@@ -14,9 +14,9 @@ import { headers } from 'next/headers'
  * 3. 用户访问 /posts 时会自动重定向到 /en/posts 或 /zh/posts
  */
 export function createRedirectPage(targetPath: string) {
-  return function RedirectPage() {
-    // 获取请求头中的语言偏好
-    const headersList = headers()
+  return async function RedirectPage() {
+    // 获取请求头中的语言偏好（Next.js 15 中 headers() 是异步的）
+    const headersList = await headers()
     const acceptLanguage = headersList.get('accept-language') || ''
     
     // 简单的语言检测逻辑
