@@ -28,18 +28,16 @@ export function formatTimeUnit(value: number): string {
   return value.toString().padStart(2, '0');
 }
 
-// Get IST time
+// Get IST time (使用本地时间，不做错误的时区转换)
 export function getISTTime(): Date {
-  const now = new Date();
-  const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-  const ist = new Date(utc + (330 * 60000)); // IST is UTC+5:30
-  return ist;
+  // 直接返回当前时间，让浏览器处理时区
+  return new Date();
 }
 
 // Get next midnight IST
 export function getNextMidnightIST(): Date {
-  const ist = getISTTime();
-  const tomorrow = new Date(ist);
+  const now = new Date();
+  const tomorrow = new Date(now);
   tomorrow.setDate(tomorrow.getDate() + 1);
   tomorrow.setHours(0, 0, 0, 0);
   return tomorrow;
@@ -47,18 +45,18 @@ export function getNextMidnightIST(): Date {
 
 // Get weekend end time (Sunday 11:59 PM IST)
 export function getWeekendEndIST(): Date {
-  const ist = getISTTime();
-  const daysUntilSunday = 7 - ist.getDay(); // 0 = Sunday, 6 = Saturday
-  const sundayEnd = new Date(ist);
-  sundayEnd.setDate(ist.getDate() + (daysUntilSunday === 7 ? 0 : daysUntilSunday));
+  const now = new Date();
+  const daysUntilSunday = 7 - now.getDay(); // 0 = Sunday, 6 = Saturday
+  const sundayEnd = new Date(now);
+  sundayEnd.setDate(now.getDate() + (daysUntilSunday === 7 ? 0 : daysUntilSunday));
   sundayEnd.setHours(23, 59, 59, 999);
   return sundayEnd;
 }
 
 // Check if current time is weekend (Friday to Sunday)
 export function isWeekend(): boolean {
-  const ist = getISTTime();
-  const day = ist.getDay();
+  const now = new Date();
+  const day = now.getDay();
   return day === 5 || day === 6 || day === 0; // Friday, Saturday, Sunday
 }
 
@@ -82,7 +80,7 @@ export function getCurrentCricketSpecial() {
 
 // Generate countdown config based on type
 export function generateCountdownConfig(type: TimerType): CountdownConfig {
-  const now = getISTTime();
+  const now = new Date(); // 直接使用当前时间
   
   switch (type) {
     case 'flash-sale':
