@@ -26,15 +26,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/movie/narasimha-2025', priority: 0.9, changeFrequency: 'daily' as const },
   ]
 
-  // 根目录独立页面（不需要国际化）
-  const rootPages = [
-    { url: `${baseUrl}/bookmyshow`, priority: 0.7, changeFrequency: 'weekly' as const },
-    { url: `${baseUrl}/cast`, priority: 0.6, changeFrequency: 'monthly' as const },
-    { url: `${baseUrl}/download`, priority: 0.7, changeFrequency: 'weekly' as const },
-    { url: `${baseUrl}/news`, priority: 0.8, changeFrequency: 'daily' as const },
-    { url: `${baseUrl}/ott-release`, priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: `${baseUrl}/reviews`, priority: 0.7, changeFrequency: 'weekly' as const },
-    { url: `${baseUrl}/watch-online`, priority: 0.8, changeFrequency: 'daily' as const },
+  // 这些页面已经被robots.txt禁止，不应该出现在sitemap中
+  // 注释掉以避免Google Search Console报告冲突
+  const rootPages: { url: string; priority: number; changeFrequency: 'daily' | 'weekly' | 'monthly' | 'yearly' }[] = [
+    // 这些URL已在robots.txt中禁止爬取，不应包含在sitemap中
+    // { url: `${baseUrl}/bookmyshow`, priority: 0.7, changeFrequency: 'weekly' as const },
+    // { url: `${baseUrl}/cast`, priority: 0.6, changeFrequency: 'monthly' as const },
+    // { url: `${baseUrl}/download`, priority: 0.7, changeFrequency: 'weekly' as const },
+    // { url: `${baseUrl}/news`, priority: 0.8, changeFrequency: 'daily' as const },
+    // { url: `${baseUrl}/ott-release`, priority: 0.8, changeFrequency: 'weekly' as const },
+    // { url: `${baseUrl}/reviews`, priority: 0.7, changeFrequency: 'weekly' as const },
+    // { url: `${baseUrl}/watch-online`, priority: 0.8, changeFrequency: 'daily' as const },
   ]
 
   // 生成所有国际化页面的URL

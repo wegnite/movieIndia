@@ -12,7 +12,14 @@ export default function robots(): MetadataRoute.Robots {
           '/*.json$',
           '/cdn-cgi/',
           '/icon',
-          '/$'  // Disallow the bare $ path
+          '/$',  // Disallow the bare $ path
+          '/watch-online',
+          '/ott-release', 
+          '/bookmyshow',
+          '/download',
+          '/cast',
+          '/news',
+          '/reviews'
         ],
       },
       {

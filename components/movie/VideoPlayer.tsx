@@ -14,7 +14,7 @@ interface VideoPlayerProps {
   poster?: string
 }
 
-export default function VideoPlayer({ videoUrl, title = "Mahavatar Narsimha Full Movie", poster }: VideoPlayerProps) {
+export default function VideoPlayer({ videoUrl, title = "Mahavatar Narsimha", poster }: VideoPlayerProps) {
   const [isHovered, setIsHovered] = useState(false)
   const [pulseAnimation, setPulseAnimation] = useState(true)
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
@@ -34,12 +34,18 @@ export default function VideoPlayer({ videoUrl, title = "Mahavatar Narsimha Full
   }, [isVideoPlaying])
 
   const handlePlayClick = () => {
-    setIsVideoPlaying(true)
-    // Simulate starting video playback
-    setTimeout(() => {
-      // Open video link in new window
-      window.open(videoUrl, '_blank', 'width=1280,height=720,menubar=no,toolbar=no,location=no,status=no')
-    }, 1000)
+    // 明确告知用户将跳转到外部平台
+    const userConfirmed = window.confirm(
+      'This will open the official trailer on YouTube in a new window. Continue?'
+    )
+    
+    if (userConfirmed) {
+      setIsVideoPlaying(true)
+      // Open video link in new window after confirmation
+      setTimeout(() => {
+        window.open(videoUrl, '_blank', 'width=1280,height=720,menubar=no,toolbar=no,location=no,status=no')
+      }, 1000)
+    }
   }
 
   const handleSubscribeClick = () => {
@@ -81,8 +87,8 @@ export default function VideoPlayer({ videoUrl, title = "Mahavatar Narsimha Full
               <Star className="w-4 h-4 mr-1" />
               HD Quality
             </Badge>
-            <Badge className="bg-green-600 text-white px-3 py-1">
-              Full Movie Available
+            <Badge className="bg-blue-600 text-white px-3 py-1">
+              Trailer Preview
             </Badge>
           </div>
           
@@ -104,7 +110,7 @@ export default function VideoPlayer({ videoUrl, title = "Mahavatar Narsimha Full
           </h3>
           
           <p className="text-xl text-gray-200 mb-6 text-center max-w-2xl">
-           Click the play button to watch the full movie in a new window.
+           Watch the official trailer. Full movie available on partner streaming platforms.
           </p>
           
           {/* Movie info */}
@@ -140,7 +146,7 @@ export default function VideoPlayer({ videoUrl, title = "Mahavatar Narsimha Full
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
           <div className="flex justify-between items-center">
             <p className="text-sm text-gray-400">
-              Click to open movie player in a new window
+              Official trailer - Full movie on streaming platforms
             </p>
             <div className="flex gap-2">
               <Badge variant="secondary" className="bg-purple-600/20 text-purple-300 border-purple-500">
